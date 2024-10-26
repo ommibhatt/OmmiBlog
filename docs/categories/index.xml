@@ -1,0 +1,24 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Categories - Category - OmmiBlog</title>
+        <link>https://ommibhatt.github.io/OmmiBlog/categories/</link>
+        <description>Categories - Category - OmmiBlog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>ommibhatt@gmail.com (Om Bhatt)</managingEditor>
+            <webMaster>ommibhatt@gmail.com (Om Bhatt)</webMaster><lastBuildDate>Wed, 21 Aug 2024 12:00:00 &#43;0330</lastBuildDate><atom:link href="https://ommibhatt.github.io/OmmiBlog/categories/" rel="self" type="application/rss+xml" /><item>
+    <title>Blogs</title>
+    <link>https://ommibhatt.github.io/OmmiBlog/categories/blogs/</link>
+    <pubDate>Wed, 21 Aug 2024 12:00:00 &#43;0330</pubDate>
+    <author>Om Bhatt</author>
+    <guid>https://ommibhatt.github.io/OmmiBlog/categories/blogs/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Writeups</title>
+    <link>https://ommibhatt.github.io/OmmiBlog/categories/writeups/</link>
+    <pubDate>Wed, 24 Jul 2024 12:00:00 &#43;0530</pubDate>
+    <author>Om Bhatt</author>
+    <guid>https://ommibhatt.github.io/OmmiBlog/categories/writeups/</guid>
+    <description><![CDATA[]]></description>
+</item>
+</channel>
+</rss>

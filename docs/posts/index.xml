@@ -1,0 +1,117 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>All Posts - OmmiBlog</title>
+        <link>https://ommibhatt.github.io/OmmiBlog/posts/</link>
+        <description>All Posts | OmmiBlog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>ommibhatt@gmail.com (Om Bhatt)</managingEditor>
+            <webMaster>ommibhatt@gmail.com (Om Bhatt)</webMaster><lastBuildDate>Wed, 21 Aug 2024 12:00:00 &#43;0330</lastBuildDate><atom:link href="https://ommibhatt.github.io/OmmiBlog/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>How to Install Yocto Project</title>
+    <link>https://ommibhatt.github.io/OmmiBlog/posts/yocto-project/</link>
+    <pubDate>Wed, 21 Aug 2024 12:00:00 &#43;0330</pubDate>
+    <author>Om Bhatt</author>
+    <guid>https://ommibhatt.github.io/OmmiBlog/posts/yocto-project/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/OmmiBlog/yocto-project.png" referrerpolicy="no-referrer">
+            </div>Yocto Project Yocto Project is an open-source collaboration project that helps developers create custom Linux-based systems. This guide will walk you through setting up Yocto with STM32MP1 support.
+Basic Dependencies First, update your system and install the essential dependencies:
+sudo apt update sudo apt upgrade sudo apt install -y build-essential bc chrpath cpio diffstat gawk git texinfo wget python3 python3-pip sudo locale-gen en_US.UTF-8 Additional Dependencies You will also need some additional dependencies for Yocto:]]></description>
+</item>
+<item>
+    <title>How to Boost Performance on Any Linux System</title>
+    <link>https://ommibhatt.github.io/OmmiBlog/posts/linux-performance/</link>
+    <pubDate>Wed, 21 Aug 2024 12:00:00 &#43;0530</pubDate>
+    <author>Om Bhatt</author>
+    <guid>https://ommibhatt.github.io/OmmiBlog/posts/linux-performance/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/OmmiBlog/linux-performance.png" referrerpolicy="no-referrer">
+            </div>Boost Performance on Any Linux System Enhancing the performance of your Linux system can be achieved through various optimizations. This guide focuses on a straightforward yet effective method: configuring CPU frequency settings to maximize system performance.
+Step 1: Install Required Tools Start by installing the cpufrequtils package, which provides utilities for managing CPU frequency:
+sudo apt-get install cpufrequtils -y Step 2: Monitor CPU Frequency To keep track of your CPU frequency in real-time, use the following command:]]></description>
+</item>
+<item>
+    <title>How to Install Arduino IDE on Linux Without Port Issues</title>
+    <link>https://ommibhatt.github.io/OmmiBlog/posts/arduino-ide/</link>
+    <pubDate>Sun, 18 Aug 2024 12:00:00 &#43;0530</pubDate>
+    <author>Om Bhatt</author>
+    <guid>https://ommibhatt.github.io/OmmiBlog/posts/arduino-ide/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/OmmiBlog/arduino-ide.png" referrerpolicy="no-referrer">
+            </div>Installing Arduino IDE on Linux Arduino IDE is essential for developing and uploading code to Arduino boards. This guide will walk you through installing Arduino IDE on Linux and configuring it to handle serial ports properly, including adding support for ESP32 and ESP8266 boards.
+Download Arduino IDE First, download the Arduino IDE AppImage suitable for your Linux system:
+Download Link: arduino-ide_2.3.2_Linux_64bit.AppImage Make the AppImage Executable After downloading, you need to make the AppImage executable:]]></description>
+</item>
+<item>
+    <title>How To Build a Static Website With Hugo</title>
+    <link>https://ommibhatt.github.io/OmmiBlog/posts/website-with-hugo/</link>
+    <pubDate>Sat, 17 Aug 2024 20:19:43 &#43;0530</pubDate>
+    <author>Om Bhatt</author>
+    <guid>https://ommibhatt.github.io/OmmiBlog/posts/website-with-hugo/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/OmmiBlog/static-site-generator.png" referrerpolicy="no-referrer">
+            </div>HUGO What Is Hugo? Hugo is a powerful static site generator written in Go, optimized for speed and flexibility. It boasts an advanced templating system and fast asset pipelines, allowing you to render a complete site in seconds.
+Why Choose Hugo? Hugo’s flexibility and multilingual support make it ideal for various types of sites, including:
+Corporate, government, nonprofit, and education sites Documentation sites Image portfolios Landing pages Business, professional, and personal blogs Resumes and CVs How to Install Hugo Ubuntu/Debian: sudo apt install hugo Arch: sudo pacman -S hugo Fedora: sudo dnf install hugo To verify your installation, run:]]></description>
+</item>
+<item>
+    <title>How to Safely Uninstall Any Linux Distro from a Windows Dual Boot</title>
+    <link>https://ommibhatt.github.io/OmmiBlog/posts/how-to-safely-uninstall-linux/</link>
+    <pubDate>Sun, 11 Aug 2024 19:16:39 &#43;0530</pubDate>
+    <author>Om Bhatt</author>
+    <guid>https://ommibhatt.github.io/OmmiBlog/posts/how-to-safely-uninstall-linux/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/OmmiBlog/remove-linux.png" referrerpolicy="no-referrer">
+            </div>The steps for uninstalling Linux Mint from a Windows dual boot setup are the same for any other Linux distro, be it Ubuntu, Debian, Fedora, Arch, etc.
+1. Boot into Windows. 2. Open Disk Management: Press Windows + X to open the Power User Menu. Click on Disk Management. 3. Identify the Linux partition: Look for a partition that is formatted with Healthy (Primary Partition) because it is not showing as ext4 (Linux filesystem).]]></description>
+</item>
+<item>
+    <title>ImaginaryCTF 2024</title>
+    <link>https://ommibhatt.github.io/OmmiBlog/posts/imaginary-ctf-2024/</link>
+    <pubDate>Wed, 24 Jul 2024 12:00:00 &#43;0530</pubDate>
+    <author>Om Bhatt</author>
+    <guid>https://ommibhatt.github.io/OmmiBlog/posts/imaginary-ctf-2024/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/OmmiBlog/Imaginary-ctf.png" referrerpolicy="no-referrer">
+            </div>imaginaryCTF 2024 FORENSICS: bom Description: 楣瑦筴栴瑟楳渷彣桩渳獥
+Attachments:chal.txt
+Solution: Inside the file, only the text þÿ is not part of the flag; the rest of the content, ictf{th4t_isn7_chin3se}, is the flag.
+Flag: ictf{th4t_isn7_chin3se}
+packed Description: Packet Tracer is a cross-platform visual simulation tool designed by Cisco Systems that allows users to create network topologies and imitate modern computer networks. The software allows users to simulate the configuration of Cisco routers and switches using a simulated command line interface.]]></description>
+</item>
+<item>
+    <title>OSCTF</title>
+    <link>https://ommibhatt.github.io/OmmiBlog/posts/osctf/</link>
+    <pubDate>Mon, 15 Jul 2024 12:00:00 &#43;0530</pubDate>
+    <author>Om Bhatt</author>
+    <guid>https://ommibhatt.github.io/OmmiBlog/posts/osctf/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/OmmiBlog/osctf.png" referrerpolicy="no-referrer">
+            </div>OSCTF Forensics Soul Vellorei Description: Seele Vollerei is an orphaned girl in Cocolia’s Orphanage. But the tragic event in her past made that she was gone forever, until then she returned like a mysterious butterfly. How is this related to the challenge though? You figure out for youself.
+Solution: open that pdf in word and search for OSCTF Whole document and found text OSCTF{V3l10n4_1s_Gr43t} behind the image of Vollerei
+Vellorei OSINT Vietnam Tourist 1 Vietnam Tourist 1 Description: What a Mausoleum!]]></description>
+</item>
+<item>
+    <title>Junior.Crypt.2024 CTF</title>
+    <link>https://ommibhatt.github.io/OmmiBlog/posts/junior.crypt.2024-ctf/</link>
+    <pubDate>Sat, 06 Jul 2024 15:30:00 &#43;0530</pubDate>
+    <author>Om Bhatt</author>
+    <guid>https://ommibhatt.github.io/OmmiBlog/posts/junior.crypt.2024-ctf/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/OmmiBlog/junior.crypt.2024-ctf.png" referrerpolicy="no-referrer">
+            </div>Junior.Crypt.2024 CTF was an engaging event held from Wednesday, July 3, 2024, 8:30 PM IST to Friday, July 5, 2024, 8:30 PM IST.
+Below is a concise writeup of my solutions during the competition.The CTF is organized by students from the Department of System Programming and Computer Security at Grodno State University in Belarus.
+Forensics FTP (50 Points) Description:
+Find the hidden FTP password within the provided file. The flag format is grodno{password}.]]></description>
+</item>
+<item>
+    <title>Bitguard Cybersecurity Hackthon</title>
+    <link>https://ommibhatt.github.io/OmmiBlog/posts/bitguard-cybersecurity-hackthon/</link>
+    <pubDate>Fri, 21 Jun 2024 19:16:39 &#43;0530</pubDate>
+    <author>Om Bhatt</author>
+    <guid>https://ommibhatt.github.io/OmmiBlog/posts/bitguard-cybersecurity-hackthon/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/OmmiBlog/bitguard-cybersecurity-hackthon.png" referrerpolicy="no-referrer">
+            </div>The Capture the Flag (CTF) event organized by Mercer | Mettl spanned two weeks and featured 20 challenges. I successfully solved 15 of these challenges, securing the 37th position in the competition. This CTF, designed for participants at a beginner-to-intermediate level, offered a fantastic opportunity to enhance my cybersecurity skills and explore new concepts.
+Challenge 1: Introduction This was a straightforward sanity challenge. The flag was directly visible in plaintext on the provided website.]]></description>
+</item>
+</channel>
+</rss>

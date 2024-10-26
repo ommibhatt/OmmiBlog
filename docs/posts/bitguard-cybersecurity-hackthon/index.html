@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Bitguard Cybersecurity Hackthon - OmmiBlog</title>
+
+     </script><link rel="apple-touch-icon" sizes="180x180" href="/OmmiBlog/apple-touch-icon.png">
+     <link rel="icon" type="image/png" sizes="32x32" href="/OmmiBlog/favicon-32x32.png">
+     <link rel="icon" type="image/png" sizes="16x16" href="/OmmiBlog/favicon-16x16.png">
+     <link rel="manifest" href="/OmmiBlog/site.webmanifest">
+     <link rel="mask-icon" href="/OmmiBlog/safari-pinned-tab.svg" color="#5bbad5"><meta name="Description" content="A writeup of my experience and solutions during the Mercer | Mettl CTF event."><meta property="og:title" content="Bitguard Cybersecurity Hackthon" />
+<meta property="og:description" content="A writeup of my experience and solutions during the Mercer | Mettl CTF event." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ommibhatt.github.io/OmmiBlog/posts/bitguard-cybersecurity-hackthon/" /><meta property="og:image" content="https://ommibhatt.github.io/OmmiBlog/bitguard-cybersecurity-hackthon.png" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-06-21T19:16:39+05:30" />
+<meta property="article:modified_time" content="2024-06-21T19:16:39+05:30" /><meta property="og:site_name" content="OmmiBlog" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://ommibhatt.github.io/OmmiBlog/bitguard-cybersecurity-hackthon.png"/>
+
+<meta name="twitter:title" content="Bitguard Cybersecurity Hackthon"/>
+<meta name="twitter:description" content="A writeup of my experience and solutions during the Mercer | Mettl CTF event."/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://ommibhatt.github.io/OmmiBlog/posts/bitguard-cybersecurity-hackthon/" /><link rel="next" href="https://ommibhatt.github.io/OmmiBlog/posts/junior.crypt.2024-ctf/" /><link rel="stylesheet" href="/OmmiBlog/css/style.min.css"><link rel="preload" href="/OmmiBlog/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/OmmiBlog/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/OmmiBlog/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/OmmiBlog/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Bitguard Cybersecurity Hackthon",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/ommibhatt.github.io\/OmmiBlog\/posts\/bitguard-cybersecurity-hackthon\/"
+        },"genre": "posts","wordcount":  443 ,
+        "url": "https:\/\/ommibhatt.github.io\/OmmiBlog\/posts\/bitguard-cybersecurity-hackthon\/","datePublished": "2024-06-21T19:16:39+05:30","dateModified": "2024-06-21T19:16:39+05:30","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Om Bhatt"
+            },"description": "A writeup of my experience and solutions during the Mercer | Mettl CTF event."
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/OmmiBlog/" title="OmmiBlog">Ommi</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/OmmiBlog/"><i class='fas fa-home fa-fw' aria-hidden='true'></i> Home </a><a class="menu-item" href="/OmmiBlog/categories/blogs"><i class='fas fa-blog fa-fw' aria-hidden='true'></i> Blogs </a><a class="menu-item" href="/OmmiBlog/categories/writeups"><i class='fas fa-pencil-alt fa-fw' aria-hidden='true'></i> Writeups </a><a class="menu-item" href="/OmmiBlog/about"><i class='fas fa-info-circle fa-fw' aria-hidden='true'></i> About </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/OmmiBlog/" title="OmmiBlog">Ommi</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/OmmiBlog/" title=""><i class='fas fa-home fa-fw' aria-hidden='true'></i>Home</a><a class="menu-item" href="/OmmiBlog/categories/blogs" title=""><i class='fas fa-blog fa-fw' aria-hidden='true'></i>Blogs</a><a class="menu-item" href="/OmmiBlog/categories/writeups" title=""><i class='fas fa-pencil-alt fa-fw' aria-hidden='true'></i>Writeups</a><a class="menu-item" href="/OmmiBlog/about" title=""><i class='fas fa-info-circle fa-fw' aria-hidden='true'></i>About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Bitguard Cybersecurity Hackthon</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://www.linkedin.com/in/om-bhatt-b92a4422a" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Om Bhatt</a></span>&nbsp;<span class="post-category">included in <a href="/OmmiBlog/categories/writeups/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Writeups</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="21-06-2024">21-06-2024</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;443 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;3 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/OmmiBlog/svg/loading.min.svg"
+        data-src="/OmmiBlog/posts/bitguard-cybersecurity-hackthon/bitguard-cybersecurity-hackthon.png"
+        data-srcset="/OmmiBlog/posts/bitguard-cybersecurity-hackthon/bitguard-cybersecurity-hackthon.png, /OmmiBlog/posts/bitguard-cybersecurity-hackthon/bitguard-cybersecurity-hackthon.png 1.5x, /OmmiBlog/posts/bitguard-cybersecurity-hackthon/bitguard-cybersecurity-hackthon.png 2x"
+        data-sizes="auto"
+        alt="/OmmiBlog/posts/bitguard-cybersecurity-hackthon/bitguard-cybersecurity-hackthon.png"
+        title="A writeup of my experience and solutions during the Mercer | Mettl CTF event." width="1863" height="563" /></div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#challenge-1-introduction"><strong>Challenge 1: Introduction</strong></a></li>
+        <li><a href="#challenge-2-tic-tac-toe"><strong>Challenge 2: Tic Tac Toe</strong></a></li>
+        <li><a href="#challenge-3-connect-4"><strong>Challenge 3: Connect 4</strong></a></li>
+        <li><a href="#challenge-4-brute-me"><strong>Challenge 4: Brute ME</strong></a></li>
+        <li><a href="#challenge-5-android"><strong>Challenge 5: Android</strong></a></li>
+        <li><a href="#challenge-6-icann"><strong>Challenge 6: ICANN</strong></a></li>
+        <li><a href="#challenge-7-google"><strong>Challenge 7: Google</strong></a></li>
+        <li><a href="#challenge-8-i-robot"><strong>Challenge 8: i-Robot</strong></a></li>
+        <li><a href="#challenge-9-brainduck"><strong>Challenge 9: BrainDuck</strong></a></li>
+        <li><a href="#challenge-10-url"><strong>Challenge 10: URL</strong></a></li>
+        <li><a href="#challenge-11-country"><strong>Challenge 11: Country</strong></a></li>
+        <li><a href="#challenge-12-maybach-shenanigans"><strong>Challenge 12: Maybach Shenanigans</strong></a></li>
+        <li><a href="#challenge-13-qr-code"><strong>Challenge 13: QR Code</strong></a></li>
+        <li><a href="#challenge-16-dr-strange"><strong>Challenge 16: Dr. Strange</strong></a></li>
+        <li><a href="#challenge-17-tor"><strong>Challenge 17: Tor</strong></a></li>
+        <li><a href="#challenge-19-s3"><strong>Challenge 19: S3</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>The Capture the Flag (CTF) event organized by Mercer | Mettl spanned two weeks and featured 20 challenges. I successfully solved 15 of these challenges, securing the 37th position in the competition. This CTF, designed for participants at a beginner-to-intermediate level, offered a fantastic opportunity to enhance my cybersecurity skills and explore new concepts.</p>
+<h3 id="challenge-1-introduction"><strong>Challenge 1: Introduction</strong></h3>
+<p>This was a straightforward sanity challenge. The flag was directly visible in plaintext on the provided website.</p>
+<p><strong>FLAG</strong>: <code>Flag{this_is_an_example_flag}</code></p>
+<h3 id="challenge-2-tic-tac-toe"><strong>Challenge 2: Tic Tac Toe</strong></h3>
+<p>The challenge involved a simple encryption script in JavaScript. By reversing the script, I decrypted the flag.</p>
+<p><strong>FLAG</strong>: <code>Flag{XOX_XOX_XOX_is_easy}</code></p>
+<h3 id="challenge-3-connect-4"><strong>Challenge 3: Connect 4</strong></h3>
+<p>Similar to Challenge 2, this challenge required decrypting an encrypted string using the same method.</p>
+<p><strong>FLAG</strong>: <code>Flag{CONNECT_MY_$_FORCE}</code></p>
+<h3 id="challenge-4-brute-me"><strong>Challenge 4: Brute ME</strong></h3>
+<p>Despite the name suggesting a brute-force approach, the flag was hidden in plain sight within the source code.</p>
+<p><strong>FLAG</strong>: <code>Flag{Dolphin_is_not_the_password}</code></p>
+<h3 id="challenge-5-android"><strong>Challenge 5: Android</strong></h3>
+<p>This was a new area for me, but after some research, I used a keytool command to extract the flag from the alias name in an APK file.</p>
+<p><strong>FLAG</strong>: <code>flag{apk_is_mine}</code></p>
+<h3 id="challenge-6-icann"><strong>Challenge 6: ICANN</strong></h3>
+<p>The challenge hinted at DNS records. By inspecting the TXT record of the challenge&rsquo;s domain using <a href="https://dnschecker.org/" target="_blank" rel="noopener noreffer ">dnschecker.org</a>, I found the flag.</p>
+<p><strong>FLAG</strong>: <code>Flag{WHAT??_this_is_my_DNS}</code></p>
+<h3 id="challenge-7-google"><strong>Challenge 7: Google</strong></h3>
+<p>Although I couldn&rsquo;t solve this challenge, I suspect that modifying the User-Agent string to &ldquo;Googlebot&rdquo; would have worked.</p>
+<h3 id="challenge-8-i-robot"><strong>Challenge 8: i-Robot</strong></h3>
+<p>This challenge was centered around the robots.txt file. I navigated through the site&rsquo;s directories and solved a CAPTCHA to retrieve the flag.</p>
+<p><strong>FLAG</strong>: <code>Flag{You_are_a_Noble_HUMAN}</code></p>
+<h3 id="challenge-9-brainduck"><strong>Challenge 9: BrainDuck</strong></h3>
+<p>By using a BrainF<em>ck compiler from <a href="https://www.dcode.fr/brainfuck-language" target="_blank" rel="noopener noreffer ">dcode.fr</a>, I decoded the flag from a BrainF</em>ck script.</p>
+<p><strong>FLAG</strong>: <code>Flag{Brain_Duck_WTF}</code></p>
+<h3 id="challenge-10-url"><strong>Challenge 10: URL</strong></h3>
+<p>I noticed a &ldquo;page=3&rdquo; parameter in the URL. Changing it to &ldquo;page=0&rdquo; revealed the flag.</p>
+<p><strong>FLAG</strong>: <code>Flag{ZERO_based_indexing}</code></p>
+<h3 id="challenge-11-country"><strong>Challenge 11: Country</strong></h3>
+<p>I identified the country associated with a hash using VirusTotal and guessed the flag correctly.</p>
+<p><strong>FLAG</strong>: <code>flag{india}</code></p>
+<h3 id="challenge-12-maybach-shenanigans"><strong>Challenge 12: Maybach Shenanigans</strong></h3>
+<p>This steganography challenge involved extracting hidden data from a PNG file using <a href="https://stylesuxx.github.io/steganography/" target="_blank" rel="noopener noreffer ">stylesuxx.github.io/steganography/</a>, which led to a base64-encoded URL and ultimately the flag.</p>
+<p><strong>FLAG</strong>: <code>flag{b3tter_b3_r3ady}</code></p>
+<h3 id="challenge-13-qr-code"><strong>Challenge 13: QR Code</strong></h3>
+<p>I used an Imgur link provided in the challenge to retrieve an image containing a QR code. Scanning the code using <a href="https://zxing.org/w/decode.jspx" target="_blank" rel="noopener noreffer ">zxing.org</a> revealed the flag.</p>
+<p><strong>FLAG</strong>: <code>Flag{aGVsbG8gd29ybGQ=}</code></p>
+<h3 id="challenge-16-dr-strange"><strong>Challenge 16: Dr. Strange</strong></h3>
+<p>This challenge required exploiting a PHP command injection vulnerability in the <code>date</code> command. By carefully crafting a payload, I managed to read the flag file.</p>
+<p><strong>FLAG</strong>: <code>flag{1ts_t1me_t0_ge4r_up}</code></p>
+<h3 id="challenge-17-tor"><strong>Challenge 17: Tor</strong></h3>
+<p>I explored the TOR network and identified a relay&rsquo;s fingerprint to obtain the flag.</p>
+<p><strong>FLAG</strong>: <code>flag{94.130.89.176:9030}</code></p>
+<h3 id="challenge-19-s3"><strong>Challenge 19: S3</strong></h3>
+<p>Using AWS CLI, I enumerated an S3 bucket and discovered the flag in a text file.</p>
+<p><strong>FLAG</strong>: <code>Flag{S3S3S3S3S3S3S3S3S3S--Symmetry--3S3S3S3S3S3S3S3S3S3S3S3}</code></p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 21-06-2024</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://ommibhatt.github.io/OmmiBlog/posts/bitguard-cybersecurity-hackthon/" data-title="Bitguard Cybersecurity Hackthon" data-via="OmmiBhatt"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://ommibhatt.github.io/OmmiBlog/posts/bitguard-cybersecurity-hackthon/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://ommibhatt.github.io/OmmiBlog/posts/bitguard-cybersecurity-hackthon/"><i class="fab fa-linkedin fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/OmmiBlog/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+            <a href="/OmmiBlog/posts/junior.crypt.2024-ctf/" class="next" rel="next" title="Junior.Crypt.2024 CTF">Junior.Crypt.2024 CTF<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="giscus" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://giscus.app">Giscus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.110.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://www.linkedin.com/in/om-bhatt-b92a4422a" target="_blank">Om Bhatt</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/OmmiBlog/lib/lightgallery/css/lightgallery-bundle.min.css"><script type="text/javascript" src="/OmmiBlog/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/OmmiBlog/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/OmmiBlog/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js"></script><script type="text/javascript" src="/OmmiBlog/lib/lightgallery/plugins/zoom/lg-zoom.min.js"></script><script type="text/javascript" src="/OmmiBlog/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/OmmiBlog/lib/sharer/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{"giscus":{"category":"Announcements","categoryId":"DIC_kwDONGPATs4CjtwX","darkTheme":"dark","emitMetadata":"0","inputPosition":"bottom","lang":"en","lazyLoading":false,"lightTheme":"light","mapping":"pathname","reactionsEnabled":"1","repo":"ommibhatt/OmmiBlog","repoId":"R_kgDONGPATg"}},"lightgallery":true};</script><script type="text/javascript" src="/OmmiBlog/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'G-7QKJQTSC2R', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-7QKJQTSC2R" async></script></body>
+</html>

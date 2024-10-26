@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>How to Boost Performance on Any Linux System - OmmiBlog</title>
+
+     </script><link rel="apple-touch-icon" sizes="180x180" href="/OmmiBlog/apple-touch-icon.png">
+     <link rel="icon" type="image/png" sizes="32x32" href="/OmmiBlog/favicon-32x32.png">
+     <link rel="icon" type="image/png" sizes="16x16" href="/OmmiBlog/favicon-16x16.png">
+     <link rel="manifest" href="/OmmiBlog/site.webmanifest">
+     <link rel="mask-icon" href="/OmmiBlog/safari-pinned-tab.svg" color="#5bbad5"><meta name="Description" content="A comprehensive guide to enhancing Linux system performance by configuring CPU frequency settings."><meta property="og:title" content="How to Boost Performance on Any Linux System" />
+<meta property="og:description" content="A comprehensive guide to enhancing Linux system performance by configuring CPU frequency settings." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ommibhatt.github.io/OmmiBlog/posts/linux-performance/" /><meta property="og:image" content="https://ommibhatt.github.io/OmmiBlog/linux-performance.png" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-08-21T12:00:00+05:30" />
+<meta property="article:modified_time" content="2024-08-21T12:00:00+05:30" /><meta property="og:site_name" content="OmmiBlog" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://ommibhatt.github.io/OmmiBlog/linux-performance.png"/>
+
+<meta name="twitter:title" content="How to Boost Performance on Any Linux System"/>
+<meta name="twitter:description" content="A comprehensive guide to enhancing Linux system performance by configuring CPU frequency settings."/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://ommibhatt.github.io/OmmiBlog/posts/linux-performance/" /><link rel="prev" href="https://ommibhatt.github.io/OmmiBlog/posts/arduino-ide/" /><link rel="next" href="https://ommibhatt.github.io/OmmiBlog/posts/yocto-project/" /><link rel="stylesheet" href="/OmmiBlog/css/style.min.css"><link rel="preload" href="/OmmiBlog/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/OmmiBlog/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/OmmiBlog/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/OmmiBlog/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "How to Boost Performance on Any Linux System",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/ommibhatt.github.io\/OmmiBlog\/posts\/linux-performance\/"
+        },"genre": "posts","wordcount":  272 ,
+        "url": "https:\/\/ommibhatt.github.io\/OmmiBlog\/posts\/linux-performance\/","datePublished": "2024-08-21T12:00:00+05:30","dateModified": "2024-08-21T12:00:00+05:30","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Om Bhatt"
+            },"description": "A comprehensive guide to enhancing Linux system performance by configuring CPU frequency settings."
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/OmmiBlog/" title="OmmiBlog">Ommi</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/OmmiBlog/"><i class='fas fa-home fa-fw' aria-hidden='true'></i> Home </a><a class="menu-item" href="/OmmiBlog/categories/blogs"><i class='fas fa-blog fa-fw' aria-hidden='true'></i> Blogs </a><a class="menu-item" href="/OmmiBlog/categories/writeups"><i class='fas fa-pencil-alt fa-fw' aria-hidden='true'></i> Writeups </a><a class="menu-item" href="/OmmiBlog/about"><i class='fas fa-info-circle fa-fw' aria-hidden='true'></i> About </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/OmmiBlog/" title="OmmiBlog">Ommi</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/OmmiBlog/" title=""><i class='fas fa-home fa-fw' aria-hidden='true'></i>Home</a><a class="menu-item" href="/OmmiBlog/categories/blogs" title=""><i class='fas fa-blog fa-fw' aria-hidden='true'></i>Blogs</a><a class="menu-item" href="/OmmiBlog/categories/writeups" title=""><i class='fas fa-pencil-alt fa-fw' aria-hidden='true'></i>Writeups</a><a class="menu-item" href="/OmmiBlog/about" title=""><i class='fas fa-info-circle fa-fw' aria-hidden='true'></i>About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">How to Boost Performance on Any Linux System</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://www.linkedin.com/in/om-bhatt-b92a4422a" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Om Bhatt</a></span>&nbsp;<span class="post-category">included in <a href="/OmmiBlog/categories/blogs/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Blogs</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="21-08-2024">21-08-2024</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;272 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;2 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/OmmiBlog/svg/loading.min.svg"
+        data-src="/OmmiBlog/posts/linux-performance/linux-performance.png"
+        data-srcset="/OmmiBlog/posts/linux-performance/linux-performance.png, /OmmiBlog/posts/linux-performance/linux-performance.png 1.5x, /OmmiBlog/posts/linux-performance/linux-performance.png 2x"
+        data-sizes="auto"
+        alt="/OmmiBlog/posts/linux-performance/linux-performance.png"
+        title="A comprehensive guide to enhancing Linux system performance by configuring CPU frequency settings." width="1488" height="450" /></div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#boost-performance-on-any-linux-system"><strong>Boost Performance on Any Linux System</strong></a></li>
+    <li><a href="#step-1-install-required-tools"><strong>Step 1: Install Required Tools</strong></a></li>
+    <li><a href="#step-2-monitor-cpu-frequency"><strong>Step 2: Monitor CPU Frequency</strong></a></li>
+    <li><a href="#step-3-configure-cpu-frequency-governor"><strong>Step 3: Configure CPU Frequency Governor</strong></a></li>
+    <li><a href="#step-4-enable-passwordless-cpufreq-set"><strong>Step 4: Enable Passwordless cpufreq-set</strong></a></li>
+    <li><a href="#step-5-apply-your-new-settings"><strong>Step 5: Apply Your New Settings</strong></a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="boost-performance-on-any-linux-system"><strong>Boost Performance on Any Linux System</strong></h2>
+<p>Enhancing the performance of your Linux system can be achieved through various optimizations. This guide focuses on a straightforward yet effective method: configuring CPU frequency settings to maximize system performance.</p>
+<hr>
+<h2 id="step-1-install-required-tools"><strong>Step 1: Install Required Tools</strong></h2>
+<p>Start by installing the cpufrequtils package, which provides utilities for managing CPU frequency:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt-get install cpufrequtils -y
+</span></span></code></pre></div><hr>
+<h2 id="step-2-monitor-cpu-frequency"><strong>Step 2: Monitor CPU Frequency</strong></h2>
+<p>To keep track of your CPU frequency in real-time, use the following command:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">watch cat /sys/devices/system/cpu/cpu<span class="o">[</span>0-7<span class="o">]</span>*/cpufreq/scaling_cur_freq
+</span></span></code></pre></div><p>This will display the current frequency of each CPU core and allow you to monitor changes live.</p>
+<hr>
+<h2 id="step-3-configure-cpu-frequency-governor"><strong>Step 3: Configure CPU Frequency Governor</strong></h2>
+<p>Edit your <code>.profile file</code> to set the CPU frequency governor to <code>performance</code> mode, which ensures your CPU runs at its maximum frequency for better performance:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nano ~/.profile
+</span></span></code></pre></div><p>Add the following commands to the file:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo cpufreq-set -c <span class="m">0</span> -g performance
+</span></span><span class="line"><span class="cl">sudo cpufreq-set -c <span class="m">1</span> -g performance
+</span></span></code></pre></div><p>Save and close the file (in nano, press <code>Ctrl+o</code>, then <code>Enter</code>, and <code>Ctrl+x</code>).</p>
+<figure><a class="lightgallery" href="/OmmiBlog/posts/linux-performance/profile.png" title="Screenshot showing the editing of the .profile file to set CPU governor" data-thumbnail="/OmmiBlog/posts/linux-performance/profile.png" data-sub-html="<h2>Editing the .profile file</h2>">
+        <img
+            class="lazyload"
+            src="/OmmiBlog/svg/loading.min.svg"
+            data-src="/OmmiBlog/posts/linux-performance/profile.png"
+            data-srcset="/OmmiBlog/posts/linux-performance/profile.png, /OmmiBlog/posts/linux-performance/profile.png 1.5x, /OmmiBlog/posts/linux-performance/profile.png 2x"
+            data-sizes="auto"
+            alt="Screenshot showing the editing of the .profile file to set CPU governor" width="659" height="476" />
+    </a><figcaption class="image-caption">Editing the .profile file</figcaption>
+    </figure>
+<hr>
+<h2 id="step-4-enable-passwordless-cpufreq-set"><strong>Step 4: Enable Passwordless cpufreq-set</strong></h2>
+<p>To streamline the process and avoid entering your password each time you apply CPU settings, configure sudo to allow passwordless execution of cpufreq-set:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo visudo
+</span></span></code></pre></div><p>Add this line to the file:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ombhatt <span class="nv">ALL</span><span class="o">=(</span>ALL<span class="o">)</span> NOPASSWD:/bin/cpufreq-set
+</span></span></code></pre></div><p>Replace <code>ombhatt</code> with your actual username.
+Save and close the file</p>
+<figure><a class="lightgallery" href="/OmmiBlog/posts/linux-performance/vsudo.png" title="Screenshot showing the configuration of sudo for passwordless cpufreq-set access" data-thumbnail="/OmmiBlog/posts/linux-performance/vsudo.png" data-sub-html="<h2>Configuring sudo for passwordless access</h2>">
+        <img
+            class="lazyload"
+            src="/OmmiBlog/svg/loading.min.svg"
+            data-src="/OmmiBlog/posts/linux-performance/vsudo.png"
+            data-srcset="/OmmiBlog/posts/linux-performance/vsudo.png, /OmmiBlog/posts/linux-performance/vsudo.png 1.5x, /OmmiBlog/posts/linux-performance/vsudo.png 2x"
+            data-sizes="auto"
+            alt="Screenshot showing the configuration of sudo for passwordless cpufreq-set access" width="659" height="476" />
+    </a><figcaption class="image-caption">Configuring sudo for passwordless access</figcaption>
+    </figure>
+<hr>
+<h2 id="step-5-apply-your-new-settings"><strong>Step 5: Apply Your New Settings</strong></h2>
+<p>To activate your new settings, either restart your system or reload your .profile with:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">source</span> ~/.profile
+</span></span></code></pre></div><hr>
+<p>Note: Setting the CPU governor to &ldquo;performance&rdquo; can lead to increased power consumption and heat. It’s advisable to monitor your system’s temperature and power usage after making these adjustments.</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 21-08-2024</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://ommibhatt.github.io/OmmiBlog/posts/linux-performance/" data-title="How to Boost Performance on Any Linux System" data-via="OmmiBhatt"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://ommibhatt.github.io/OmmiBlog/posts/linux-performance/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://ommibhatt.github.io/OmmiBlog/posts/linux-performance/"><i class="fab fa-linkedin fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/OmmiBlog/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/OmmiBlog/posts/arduino-ide/" class="prev" rel="prev" title="How to Install Arduino IDE on Linux Without Port Issues"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>How to Install Arduino IDE on Linux Without Port Issues</a>
+            <a href="/OmmiBlog/posts/yocto-project/" class="next" rel="next" title="How to Install Yocto Project">How to Install Yocto Project<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="giscus" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://giscus.app">Giscus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.110.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://www.linkedin.com/in/om-bhatt-b92a4422a" target="_blank">Om Bhatt</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/OmmiBlog/lib/lightgallery/css/lightgallery-bundle.min.css"><script type="text/javascript" src="/OmmiBlog/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/OmmiBlog/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/OmmiBlog/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js"></script><script type="text/javascript" src="/OmmiBlog/lib/lightgallery/plugins/zoom/lg-zoom.min.js"></script><script type="text/javascript" src="/OmmiBlog/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/OmmiBlog/lib/sharer/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{"giscus":{"category":"Announcements","categoryId":"DIC_kwDONGPATs4CjtwX","darkTheme":"dark","emitMetadata":"0","inputPosition":"bottom","lang":"en","lazyLoading":false,"lightTheme":"light","mapping":"pathname","reactionsEnabled":"1","repo":"ommibhatt/OmmiBlog","repoId":"R_kgDONGPATg"}},"lightgallery":true};</script><script type="text/javascript" src="/OmmiBlog/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'G-7QKJQTSC2R', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-7QKJQTSC2R" async></script></body>
+</html>

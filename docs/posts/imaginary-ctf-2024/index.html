@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>ImaginaryCTF 2024 - OmmiBlog</title>
+
+     </script><link rel="apple-touch-icon" sizes="180x180" href="/OmmiBlog/apple-touch-icon.png">
+     <link rel="icon" type="image/png" sizes="32x32" href="/OmmiBlog/favicon-32x32.png">
+     <link rel="icon" type="image/png" sizes="16x16" href="/OmmiBlog/favicon-16x16.png">
+     <link rel="manifest" href="/OmmiBlog/site.webmanifest">
+     <link rel="mask-icon" href="/OmmiBlog/safari-pinned-tab.svg" color="#5bbad5"><meta name="Description" content="A detailed writeup of my experience and solutions during the ImaginaryCTF 2024"><meta property="og:title" content="ImaginaryCTF 2024" />
+<meta property="og:description" content="A detailed writeup of my experience and solutions during the ImaginaryCTF 2024" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ommibhatt.github.io/OmmiBlog/posts/imaginary-ctf-2024/" /><meta property="og:image" content="https://ommibhatt.github.io/OmmiBlog/Imaginary-ctf.png" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-07-24T12:00:00+05:30" />
+<meta property="article:modified_time" content="2024-07-24T12:00:00+05:30" /><meta property="og:site_name" content="OmmiBlog" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://ommibhatt.github.io/OmmiBlog/Imaginary-ctf.png"/>
+
+<meta name="twitter:title" content="ImaginaryCTF 2024"/>
+<meta name="twitter:description" content="A detailed writeup of my experience and solutions during the ImaginaryCTF 2024"/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://ommibhatt.github.io/OmmiBlog/posts/imaginary-ctf-2024/" /><link rel="prev" href="https://ommibhatt.github.io/OmmiBlog/posts/osctf/" /><link rel="next" href="https://ommibhatt.github.io/OmmiBlog/posts/how-to-safely-uninstall-linux/" /><link rel="stylesheet" href="/OmmiBlog/css/style.min.css"><link rel="preload" href="/OmmiBlog/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/OmmiBlog/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/OmmiBlog/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/OmmiBlog/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "ImaginaryCTF 2024",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/ommibhatt.github.io\/OmmiBlog\/posts\/imaginary-ctf-2024\/"
+        },"genre": "posts","wordcount":  575 ,
+        "url": "https:\/\/ommibhatt.github.io\/OmmiBlog\/posts\/imaginary-ctf-2024\/","datePublished": "2024-07-24T12:00:00+05:30","dateModified": "2024-07-24T12:00:00+05:30","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Om Bhatt"
+            },"description": "A detailed writeup of my experience and solutions during the ImaginaryCTF 2024"
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/OmmiBlog/" title="OmmiBlog">Ommi</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/OmmiBlog/"><i class='fas fa-home fa-fw' aria-hidden='true'></i> Home </a><a class="menu-item" href="/OmmiBlog/categories/blogs"><i class='fas fa-blog fa-fw' aria-hidden='true'></i> Blogs </a><a class="menu-item" href="/OmmiBlog/categories/writeups"><i class='fas fa-pencil-alt fa-fw' aria-hidden='true'></i> Writeups </a><a class="menu-item" href="/OmmiBlog/about"><i class='fas fa-info-circle fa-fw' aria-hidden='true'></i> About </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/OmmiBlog/" title="OmmiBlog">Ommi</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/OmmiBlog/" title=""><i class='fas fa-home fa-fw' aria-hidden='true'></i>Home</a><a class="menu-item" href="/OmmiBlog/categories/blogs" title=""><i class='fas fa-blog fa-fw' aria-hidden='true'></i>Blogs</a><a class="menu-item" href="/OmmiBlog/categories/writeups" title=""><i class='fas fa-pencil-alt fa-fw' aria-hidden='true'></i>Writeups</a><a class="menu-item" href="/OmmiBlog/about" title=""><i class='fas fa-info-circle fa-fw' aria-hidden='true'></i>About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">ImaginaryCTF 2024</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://www.linkedin.com/in/om-bhatt-b92a4422a" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Om Bhatt</a></span>&nbsp;<span class="post-category">included in <a href="/OmmiBlog/categories/writeups/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Writeups</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="24-07-2024">24-07-2024</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;575 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;3 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/OmmiBlog/svg/loading.min.svg"
+        data-src="/OmmiBlog/posts/imaginary-ctf-2024/Imaginary-ctf.png"
+        data-srcset="/OmmiBlog/posts/imaginary-ctf-2024/Imaginary-ctf.png, /OmmiBlog/posts/imaginary-ctf-2024/Imaginary-ctf.png 1.5x, /OmmiBlog/posts/imaginary-ctf-2024/Imaginary-ctf.png 2x"
+        data-sizes="auto"
+        alt="/OmmiBlog/posts/imaginary-ctf-2024/Imaginary-ctf.png"
+        title="A detailed writeup of my experience and solutions during the ImaginaryCTF 2024" width="1488" height="450" /></div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#imaginaryctf-2024"><strong>imaginaryCTF 2024</strong></a></li>
+    <li><a href="#forensics"><strong>FORENSICS:</strong></a>
+      <ul>
+        <li><a href="#bom"><strong>bom</strong></a></li>
+        <li><a href="#packed"><strong>packed</strong></a></li>
+        <li><a href="#cartesian-1"><strong>cartesian-1</strong></a></li>
+        <li><a href="#dog-mom"><strong>dog-mom</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#reversing"><strong>REVERSING</strong></a>
+      <ul>
+        <li><a href="#unoriginal"><strong>unoriginal</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#crypto"><strong>CRYPTO</strong></a>
+      <ul>
+        <li><a href="#base64"><strong>base64</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#web"><strong>WEB</strong></a>
+      <ul>
+        <li><a href="#readme"><strong>readme</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#misc"><strong>MISC</strong></a>
+      <ul>
+        <li><a href="#sanity-check"><strong>sanity-check</strong></a></li>
+        <li><a href="#discord"><strong>discord</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="imaginaryctf-2024"><strong>imaginaryCTF 2024</strong></h2>
+<h2 id="forensics"><strong>FORENSICS:</strong></h2>
+<h3 id="bom"><strong>bom</strong></h3>
+<p><strong>Description:</strong>
+楣瑦筴栴瑟楳渷彣桩渳獥</p>
+<p><strong>Attachments:</strong><code>chal.txt</code></p>
+<p><strong>Solution:</strong>
+Inside the file, only the text <code>þÿ</code> is not part of the flag; the rest of the content, <code>ictf{th4t_isn7_chin3se}</code>, is the flag.</p>
+<p><strong>Flag:</strong> <code>ictf{th4t_isn7_chin3se}</code></p>
+<hr>
+<h3 id="packed"><strong>packed</strong></h3>
+<p><strong>Description:</strong>
+Packet Tracer is a cross-platform visual simulation tool designed by Cisco Systems that allows users to create network topologies and imitate modern computer networks. The software allows users to simulate the configuration of Cisco routers and switches using a simulated command line interface. (same attachment as routed)</p>
+<p><strong>Attachments:</strong><code>routed.pkg</code></p>
+<p><strong>Solution:</strong>
+extrat <code>.pkg</code> file by <a href="https://www.ezyzip.com/open-extract-pkz-file.html" target="_blank" rel="noopener noreffer ">ezyzip.com</a> and get secret.png</p>
+<figure><a class="lightgallery" href="/OmmiBlog/posts/imaginary-ctf-2024/secret.png" title="Secret.png extracted from Packet Tracer" data-thumbnail="/OmmiBlog/posts/imaginary-ctf-2024/secret.png" data-sub-html="<h2>Secret</h2>">
+        <img
+            class="lazyload"
+            src="/OmmiBlog/svg/loading.min.svg"
+            data-src="/OmmiBlog/posts/imaginary-ctf-2024/secret.png"
+            data-srcset="/OmmiBlog/posts/imaginary-ctf-2024/secret.png, /OmmiBlog/posts/imaginary-ctf-2024/secret.png 1.5x, /OmmiBlog/posts/imaginary-ctf-2024/secret.png 2x"
+            data-sizes="auto"
+            alt="Secret.png extracted from Packet Tracer" width="745" height="126" />
+    </a><figcaption class="image-caption">Secret</figcaption>
+    </figure>
+<p><strong>flag:</strong> <code>ictf{ab4697882634d4aeb6f21141ea2724d0}</code></p>
+<hr>
+<h3 id="cartesian-1"><strong>cartesian-1</strong></h3>
+<p><strong>Description:</strong>
+THIS IS AN OSINT CHALLENGE.</p>
+<p>Greetings. You have been tasked with investigating the whereabouts of a potential recruit. To perform this top-secret background check, we must gather as much information as possible.</p>
+<p>Please investigate Terrence Descartes. We know that his social accounts are relatively new, so please do not attack anything out of scope. For the sake of this series of challenges, nothing pertaining to Terry has existed before July 17, 2024. Do not investigate anything posted online before then.</p>
+<p><strong>Attachments:</strong> None,
+search his profile on instagram
+<figure><a class="lightgallery" href="/OmmiBlog/posts/imaginary-ctf-2024/terrence.png" title="Instagram profile of Terrence Descartes" data-thumbnail="/OmmiBlog/posts/imaginary-ctf-2024/terrence.png" data-sub-html="<h2>Terrence</h2>">
+        <img
+            class="lazyload"
+            src="/OmmiBlog/svg/loading.min.svg"
+            data-src="/OmmiBlog/posts/imaginary-ctf-2024/terrence.png"
+            data-srcset="/OmmiBlog/posts/imaginary-ctf-2024/terrence.png, /OmmiBlog/posts/imaginary-ctf-2024/terrence.png 1.5x, /OmmiBlog/posts/imaginary-ctf-2024/terrence.png 2x"
+            data-sizes="auto"
+            alt="Instagram profile of Terrence Descartes" width="905" height="351" />
+    </a><figcaption class="image-caption">Terrence</figcaption>
+    </figure></p>
+<p><strong>Solution:</strong>
+inside his <code>instagram story</code> : <a href="https://www.instagram.com/stories/highlights/18437746888049094/" target="_blank" rel="noopener noreffer ">travel 😎😎😎</a></p>
+<p><strong>flag:</strong> <code>ictf{i_love_revealing_info_on_the_internet}</code></p>
+<hr>
+<h3 id="dog-mom"><strong>dog-mom</strong></h3>
+<p><strong>Description:</strong>
+This is an OSINT challenge.</p>
+<p>i&rsquo;m a dog mom i 🩷 dogs</p>
+<p>Find where this picture was taken; submit your flag as ictf, both rounded to three decimal places. (example: <code>ictf{-12.345_66.533}</code>)</p>
+<p><strong>Attachments:</strong><code>image.png</code></p>
+<figure><a class="lightgallery" href="/OmmiBlog/posts/imaginary-ctf-2024/image.png" title="Dog mom image for location challenge" data-thumbnail="/OmmiBlog/posts/imaginary-ctf-2024/image.png" data-sub-html="<h2>Image</h2>">
+        <img
+            class="lazyload"
+            src="/OmmiBlog/svg/loading.min.svg"
+            data-src="/OmmiBlog/posts/imaginary-ctf-2024/image.png"
+            data-srcset="/OmmiBlog/posts/imaginary-ctf-2024/image.png, /OmmiBlog/posts/imaginary-ctf-2024/image.png 1.5x, /OmmiBlog/posts/imaginary-ctf-2024/image.png 2x"
+            data-sizes="auto"
+            alt="Dog mom image for location challenge" width="745" height="559" />
+    </a><figcaption class="image-caption">Image</figcaption>
+    </figure>
+<p><strong>Solution:</strong>
+The first step is using Google Image Search and I found a clue on <a href="https://www.flickr.com/photos/irisphotos/5850869803" target="_blank" rel="noopener noreffer ">Flickr</a>. However, the view through the windows is not from the Cathedral of Learning&rsquo;s 36th floor because the coordinates do not match. I think it might be a different building at the same location.</p>
+<p>location is <code>Cathedral of Learning Panther fountain</code> 😂</p>
+<p>Latitude: <code>40.44397</code>
+Longitude: <code>-79.95358</code></p>
+<p><strong>Flag:</strong> <code>ictf{40.444_-79.954}</code></p>
+<hr>
+<h2 id="reversing"><strong>REVERSING</strong></h2>
+<h3 id="unoriginal"><strong>unoriginal</strong></h3>
+<p><strong>Description:</strong>
+i like elf reversing</p>
+<p><strong>Attachments:</strong> <a href="https://cybersharing.net/s/8330af8ef6c673a8" target="_blank" rel="noopener noreffer ">unoriginal</a></p>
+<p><strong>Solution:</strong>
+Open the terminal by pressing <code>Ctrl+Alt+T</code>, then type the following command to check information about the ELF file.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">$ file unoriginal
+</span></span><span class="line"><span class="cl">unoriginal: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), 
+</span></span><span class="line"><span class="cl">dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2,
+</span></span><span class="line"><span class="cl">BuildID[sha1]=e62dc74b0e909a63a0fc240a62ee75ab47936823,
+</span></span><span class="line"><span class="cl"><span class="k">for</span> GNU/Linux 3.2.0, not stripped
+</span></span></code></pre></div><p>next is check strings by typing following command</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">$ strings unoriginal
+</span></span><span class="line"><span class="cl">Enter your flag here: 
+</span></span><span class="line"><span class="cl">lfqc~opvqZdkjqm`wZcidbZfm`fn`wZd6130a0`0``761gdx
+</span></span><span class="line"><span class="cl">Correct!
+</span></span><span class="line"><span class="cl">Incorrect.
+</span></span></code></pre></div><p>or use <code>xxd</code> hex editor</p>
+<p>xor 5 to get flag</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="s1">&#39;lfqc~opvqZdkjqm`wZcidbZfm`fn`wZd6130a0`0``761gdx&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">^</span> <span class="mi">5</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</span></span></code></pre></div><p><strong>Flag:</strong> <code>ictf{just_another_flag_checker_a3465d5e5ee234ba}</code></p>
+<hr>
+<h2 id="crypto"><strong>CRYPTO</strong></h2>
+<h3 id="base64"><strong>base64</strong></h3>
+<p><strong>Description:</strong> yet another base64 decoding challenge</p>
+<p><strong>Attachments:</strong> Main.py out.txt sbg.png</p>
+<p><strong>Solution:</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">Crypto.Util.number</span> <span class="kn">import</span> <span class="n">long_to_bytes</span> <span class="c1"># type: ignore</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">secret_key</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">52</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">52</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">38</span><span class="p">,</span> <span class="mi">61</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">47</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">52</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">38</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">out</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">secret_key</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">out</span> <span class="o">*=</span> <span class="mi">64</span>
+</span></span><span class="line"><span class="cl">    <span class="n">out</span> <span class="o">+=</span> <span class="n">num</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">long_to_bytes</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
+</span></span></code></pre></div><p><strong>Flag:</strong> <code>ictf{b4se_c0nv3rs1on_ftw_236680982d9e8449}</code></p>
+<hr>
+<h2 id="web"><strong>WEB</strong></h2>
+<h3 id="readme"><strong>readme</strong></h3>
+<p><strong>Description:</strong> Try to read the flag.txt file.</p>
+<p><strong>Attachments:</strong> readme.tar.gz</p>
+<p><strong>Solution:</strong>
+extract the readme file
+by typing following command</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">$ tar -zxvf readme.tar.gz
+</span></span></code></pre></div><p>then found flag inside dockerfile.</p>
+<p><strong>Flag :</strong> <code>ictf{path_normalization_to_the_rescue}</code></p>
+<hr>
+<h2 id="misc"><strong>MISC</strong></h2>
+<h3 id="sanity-check"><strong>sanity-check</strong></h3>
+<p><strong>Description:</strong> Welcome to ImaginaryCTF 2024!</p>
+<p><strong>Attachments:</strong> <code>ictf{this_isnt_real}</code></p>
+<hr>
+<h3 id="discord"><strong>discord</strong></h3>
+<p><strong>Description:</strong>
+Join our Discord community for updates and support! If you would like to do some more CTF after this competition, we do host daily CTF challenges on our Discord server as well. Join at <a href="https://discord.gg/ctf" target="_blank" rel="noopener noreffer ">https://discord.gg/ctf</a> . You can find the flag for this challenge in the #imaginaryctf-2024 channel.</p>
+<p><strong>Attachments: None</strong></p>
+<p><strong>Flag:</strong> <code>ictf{fake_flag_for_testing}</code></p>
+<hr>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 24-07-2024</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://ommibhatt.github.io/OmmiBlog/posts/imaginary-ctf-2024/" data-title="ImaginaryCTF 2024" data-via="OmmiBhatt"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://ommibhatt.github.io/OmmiBlog/posts/imaginary-ctf-2024/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://ommibhatt.github.io/OmmiBlog/posts/imaginary-ctf-2024/"><i class="fab fa-linkedin fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/OmmiBlog/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/OmmiBlog/posts/osctf/" class="prev" rel="prev" title="OSCTF"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>OSCTF</a>
+            <a href="/OmmiBlog/posts/how-to-safely-uninstall-linux/" class="next" rel="next" title="How to Safely Uninstall Any Linux Distro from a Windows Dual Boot">How to Safely Uninstall Any Linux Distro from a Windows Dual Boot<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="giscus" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://giscus.app">Giscus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.110.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://www.linkedin.com/in/om-bhatt-b92a4422a" target="_blank">Om Bhatt</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/OmmiBlog/lib/lightgallery/css/lightgallery-bundle.min.css"><script type="text/javascript" src="/OmmiBlog/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/OmmiBlog/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/OmmiBlog/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js"></script><script type="text/javascript" src="/OmmiBlog/lib/lightgallery/plugins/zoom/lg-zoom.min.js"></script><script type="text/javascript" src="/OmmiBlog/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/OmmiBlog/lib/sharer/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{"giscus":{"category":"Announcements","categoryId":"DIC_kwDONGPATs4CjtwX","darkTheme":"dark","emitMetadata":"0","inputPosition":"bottom","lang":"en","lazyLoading":false,"lightTheme":"light","mapping":"pathname","reactionsEnabled":"1","repo":"ommibhatt/OmmiBlog","repoId":"R_kgDONGPATg"}},"lightgallery":true};</script><script type="text/javascript" src="/OmmiBlog/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'G-7QKJQTSC2R', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-7QKJQTSC2R" async></script></body>
+</html>

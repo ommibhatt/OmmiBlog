@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Junior.Crypt.2024 CTF - OmmiBlog</title>
+
+     </script><link rel="apple-touch-icon" sizes="180x180" href="/OmmiBlog/apple-touch-icon.png">
+     <link rel="icon" type="image/png" sizes="32x32" href="/OmmiBlog/favicon-32x32.png">
+     <link rel="icon" type="image/png" sizes="16x16" href="/OmmiBlog/favicon-16x16.png">
+     <link rel="manifest" href="/OmmiBlog/site.webmanifest">
+     <link rel="mask-icon" href="/OmmiBlog/safari-pinned-tab.svg" color="#5bbad5"><meta name="Description" content="A detailed writeup of my experience and solutions during the Junior Crypt 2024 CTF"><meta property="og:title" content="Junior.Crypt.2024 CTF" />
+<meta property="og:description" content="A detailed writeup of my experience and solutions during the Junior Crypt 2024 CTF" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ommibhatt.github.io/OmmiBlog/posts/junior.crypt.2024-ctf/" /><meta property="og:image" content="https://ommibhatt.github.io/OmmiBlog/junior.crypt.2024-ctf.png" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-07-06T15:30:00+05:30" />
+<meta property="article:modified_time" content="2024-07-06T15:30:00+05:30" /><meta property="og:site_name" content="OmmiBlog" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://ommibhatt.github.io/OmmiBlog/junior.crypt.2024-ctf.png"/>
+
+<meta name="twitter:title" content="Junior.Crypt.2024 CTF"/>
+<meta name="twitter:description" content="A detailed writeup of my experience and solutions during the Junior Crypt 2024 CTF"/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://ommibhatt.github.io/OmmiBlog/posts/junior.crypt.2024-ctf/" /><link rel="prev" href="https://ommibhatt.github.io/OmmiBlog/posts/bitguard-cybersecurity-hackthon/" /><link rel="next" href="https://ommibhatt.github.io/OmmiBlog/posts/osctf/" /><link rel="stylesheet" href="/OmmiBlog/css/style.min.css"><link rel="preload" href="/OmmiBlog/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/OmmiBlog/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/OmmiBlog/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/OmmiBlog/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Junior.Crypt.2024 CTF",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/ommibhatt.github.io\/OmmiBlog\/posts\/junior.crypt.2024-ctf\/"
+        },"genre": "posts","wordcount":  1161 ,
+        "url": "https:\/\/ommibhatt.github.io\/OmmiBlog\/posts\/junior.crypt.2024-ctf\/","datePublished": "2024-07-06T15:30:00+05:30","dateModified": "2024-07-06T15:30:00+05:30","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Om Bhatt"
+            },"description": "A detailed writeup of my experience and solutions during the Junior Crypt 2024 CTF"
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/OmmiBlog/" title="OmmiBlog">Ommi</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/OmmiBlog/"><i class='fas fa-home fa-fw' aria-hidden='true'></i> Home </a><a class="menu-item" href="/OmmiBlog/categories/blogs"><i class='fas fa-blog fa-fw' aria-hidden='true'></i> Blogs </a><a class="menu-item" href="/OmmiBlog/categories/writeups"><i class='fas fa-pencil-alt fa-fw' aria-hidden='true'></i> Writeups </a><a class="menu-item" href="/OmmiBlog/about"><i class='fas fa-info-circle fa-fw' aria-hidden='true'></i> About </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/OmmiBlog/" title="OmmiBlog">Ommi</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/OmmiBlog/" title=""><i class='fas fa-home fa-fw' aria-hidden='true'></i>Home</a><a class="menu-item" href="/OmmiBlog/categories/blogs" title=""><i class='fas fa-blog fa-fw' aria-hidden='true'></i>Blogs</a><a class="menu-item" href="/OmmiBlog/categories/writeups" title=""><i class='fas fa-pencil-alt fa-fw' aria-hidden='true'></i>Writeups</a><a class="menu-item" href="/OmmiBlog/about" title=""><i class='fas fa-info-circle fa-fw' aria-hidden='true'></i>About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Junior.Crypt.2024 CTF</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://www.linkedin.com/in/om-bhatt-b92a4422a" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Om Bhatt</a></span>&nbsp;<span class="post-category">included in <a href="/OmmiBlog/categories/writeups/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Writeups</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="06-07-2024">06-07-2024</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1161 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;6 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/OmmiBlog/svg/loading.min.svg"
+        data-src="/OmmiBlog/posts/junior.crypt.2024-ctf/junior.crypt.2024-ctf.png"
+        data-srcset="/OmmiBlog/posts/junior.crypt.2024-ctf/junior.crypt.2024-ctf.png, /OmmiBlog/posts/junior.crypt.2024-ctf/junior.crypt.2024-ctf.png 1.5x, /OmmiBlog/posts/junior.crypt.2024-ctf/junior.crypt.2024-ctf.png 2x"
+        data-sizes="auto"
+        alt="/OmmiBlog/posts/junior.crypt.2024-ctf/junior.crypt.2024-ctf.png"
+        title="A detailed writeup of my experience and solutions during the Junior Crypt 2024 CTF" width="1581" height="478" /></div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#juniorcrypt2024"><strong>Junior.Crypt.2024</strong></a></li>
+    <li><a href="#forensics"><strong>Forensics</strong></a>
+      <ul>
+        <li><a href="#ftp-50-points"><strong>FTP (50 Points)</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#misc"><strong>Misc</strong></a>
+      <ul>
+        <li><a href="#found-on-my-windows-50-points"><strong>Found on my Windows (50 Points)</strong></a></li>
+        <li><a href="#dogs-running-in-a-circle-50-points"><strong>Dogs running in a circle (50 Points)</strong></a></li>
+        <li><a href="#my-latest-find-50-points"><strong>My Latest Find (50 Points)</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#reverse"><strong>Reverse</strong></a>
+      <ul>
+        <li><a href="#random-cipher-50-points"><strong>Random Cipher (50 Points)</strong></a></li>
+        <li><a href="#mutated-caesar-50-points"><strong>Mutated Caesar (50 Points)</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#osint"><strong>OSINT</strong></a>
+      <ul>
+        <li><a href="#capital-city-50-points"><strong>Capital City (50 Points)</strong></a></li>
+        <li><a href="#monument-to-cucumber-50-points"><strong>Monument to Cucumber (50 Points)</strong></a></li>
+        <li><a href="#smugglers-50-points"><strong>Smugglers (50 Points)</strong></a></li>
+        <li><a href="#haute-couture-50-points"><strong>Haute Couture (50 Points)</strong></a></li>
+        <li><a href="#architect-of-grodno-50-points"><strong>Architect of Grodno (50 Points)</strong></a></li>
+        <li><a href="#world-of-tanks-50-points"><strong>World of Tanks (50 Points)</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="juniorcrypt2024"><strong>Junior.Crypt.2024</strong></h2>
+<p><a href="https://ctf-spcs.mf.grsu.by/" target="_blank" rel="noopener noreffer ">CTF</a> was an engaging event held from <code>Wednesday, July 3, 2024, 8:30 PM IST to Friday, July 5, 2024, 8:30 PM IST</code>.</p>
+<p>Below is a concise writeup of my solutions during the competition.The CTF is organized by students from the Department of System Programming and Computer Security at Grodno State University in Belarus.</p>
+<h2 id="forensics"><strong>Forensics</strong></h2>
+<h3 id="ftp-50-points"><strong>FTP (50 Points)</strong></h3>
+<p><strong>Description:</strong><br>
+Find the hidden FTP password within the provided file. The flag format is <code>grodno{password}</code>.</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>
+<p><strong>Extract the File:</strong><br>
+Extracted <code>FTP_connection.rar</code> to obtain <code>FTP_connection.dll</code>.</p>
+</li>
+<li>
+<p><strong>Decompile the DLL:</strong><br>
+Used <a href="https://www.decompiler.com/" target="_blank" rel="noopener noreffer ">Decompiler.com</a> to examine the DLL&rsquo;s source code.</p>
+</li>
+<li>
+<p><strong>Retrieve the Password:</strong><br>
+Found the line <code>string text3 = &quot;12345_ftp_ctf&quot;;</code> in the decompiled <code>a.cs</code> file.</p>
+</li>
+</ol>
+<figure><a class="lightgallery" href="/OmmiBlog/posts/junior.crypt.2024-ctf/ftp.png" title="Image showing FTP DLL Decompiled Source" data-thumbnail="/OmmiBlog/posts/junior.crypt.2024-ctf/ftp.png" data-sub-html="<h2>FTP DLL Decompiled Source</h2>">
+          <img
+              class="lazyload"
+              src="/OmmiBlog/svg/loading.min.svg"
+              data-src="/OmmiBlog/posts/junior.crypt.2024-ctf/ftp.png"
+              data-srcset="/OmmiBlog/posts/junior.crypt.2024-ctf/ftp.png, /OmmiBlog/posts/junior.crypt.2024-ctf/ftp.png 1.5x, /OmmiBlog/posts/junior.crypt.2024-ctf/ftp.png 2x"
+              data-sizes="auto"
+              alt="Image showing FTP DLL Decompiled Source" width="1366" height="735" />
+      </a><figcaption class="image-caption">FTP DLL Decompiled Source</figcaption>
+      </figure>
+<p><strong>Flag:</strong> <code>grodno{12345_ftp_ctf}</code></p>
+<hr>
+<h2 id="misc"><strong>Misc</strong></h2>
+<h3 id="found-on-my-windows-50-points"><strong>Found on my Windows (50 Points)</strong></h3>
+<p><strong>Description:</strong><br>
+Identify the hash type and retrieve the original password. The flag format is <code>grodno{password}</code>.</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>
+<p><strong>Analyze the Hash:</strong><br>
+Downloaded the hash file <code>hash1.txt</code> from <a href="https://ctf-spcs.mf.grsu.by/files/df137a0bbd291f2e864cc7932b89c4ec/hash1.txt?token=eyJ1c2VyX2lkIjoxNjMwLCJ0ZWFtX2lkIjo4NjAsImZpbGVfaWQiOjE5OX0.Zry9eQ.cTGJ7EhRzvBhregY1pAMBiwriK0" target="_blank" rel="noopener noreffer ">this link</a>.</p>
+<figure><a class="lightgallery" href="/OmmiBlog/posts/junior.crypt.2024-ctf/hash.png" title="Image showing hash from file" data-thumbnail="/OmmiBlog/posts/junior.crypt.2024-ctf/hash.png" data-sub-html="<h2>Hash from File</h2>">
+           <img
+               class="lazyload"
+               src="/OmmiBlog/svg/loading.min.svg"
+               data-src="/OmmiBlog/posts/junior.crypt.2024-ctf/hash.png"
+               data-srcset="/OmmiBlog/posts/junior.crypt.2024-ctf/hash.png, /OmmiBlog/posts/junior.crypt.2024-ctf/hash.png 1.5x, /OmmiBlog/posts/junior.crypt.2024-ctf/hash.png 2x"
+               data-sizes="auto"
+               alt="Image showing hash from file" width="1339" height="202" />
+       </a><figcaption class="image-caption">Hash from File</figcaption>
+       </figure>
+</li>
+<li>
+<p><strong>Decrypt the Hash:</strong><br>
+Used <a href="https://hashes.com/en/decrypt/hash" target="_blank" rel="noopener noreffer ">Hashes.com</a> to decrypt the hash, revealing the password <code>&quot;sakura&quot;</code>.</p>
+</li>
+</ol>
+<p><strong>Flag:</strong> <code>grodno{sakura}</code></p>
+<hr>
+<h3 id="dogs-running-in-a-circle-50-points"><strong>Dogs running in a circle (50 Points)</strong></h3>
+<p><strong>Description:</strong><br>
+Actually, I&rsquo;m a fan of astronomy. But where would we be today without cybersecurity&hellip;<br>
+Determine the hash type and get the original string - the password.</p>
+<p><strong>Hash:</strong><br>
+<code>7c7afb17ed0728e28f8835421cc66da5 acf02cc7dbad40a2d61997bb0a3535e3 a6484964aea8c7e02e0b5afe9c51b3f1 ec789a7de8e61033ba7e550b048c82b9</code></p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>
+<p><strong>Analyze the Hash:</strong><br>
+The provided hash was identified and needed to be decrypted to retrieve the original string.</p>
+</li>
+<li>
+<p><strong>Decrypt the Hash:</strong><br>
+Decrypted the hash using the same method as the previous  which revealed the password <code>&quot;trustno1&quot;</code>.</p>
+<figure><a class="lightgallery" href="/OmmiBlog/posts/junior.crypt.2024-ctf/hash2.png" title="Image showing second hash" data-thumbnail="/OmmiBlog/posts/junior.crypt.2024-ctf/hash2.png" data-sub-html="<h2>Hash 2</h2>">
+           <img
+               class="lazyload"
+               src="/OmmiBlog/svg/loading.min.svg"
+               data-src="/OmmiBlog/posts/junior.crypt.2024-ctf/hash2.png"
+               data-srcset="/OmmiBlog/posts/junior.crypt.2024-ctf/hash2.png, /OmmiBlog/posts/junior.crypt.2024-ctf/hash2.png 1.5x, /OmmiBlog/posts/junior.crypt.2024-ctf/hash2.png 2x"
+               data-sizes="auto"
+               alt="Image showing second hash" width="1331" height="206" />
+       </a><figcaption class="image-caption">Hash 2</figcaption>
+       </figure>
+</li>
+</ol>
+<p><strong>Flag:</strong> <code>grodno{trustno1}</code></p>
+<hr>
+<h3 id="my-latest-find-50-points"><strong>My Latest Find (50 Points)</strong></h3>
+<p><strong>Description:</strong><br>
+My latest find. I won’t look for hashes anymore.<br>
+Determine the hash type and get the original string - the password.</p>
+<p><strong>Hash:</strong><br>
+<code>dc31d6b5e25f9fb3e75a40c26b88 9b4b9b76654c110dbda739a9e899</code></p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>
+<p><strong>Analyze the Hash:</strong><br>
+Identified the hash type and decrypted it using the same method as previous .</p>
+</li>
+<li>
+<p><strong>Decrypt the Hash:</strong><br>
+Decrypted the hash to reveal the password <code>&quot;lynlyn123&quot;</code>.</p>
+</li>
+</ol>
+<figure><a class="lightgallery" href="/OmmiBlog/posts/junior.crypt.2024-ctf/hash3.png" title="Image showing third hash" data-thumbnail="/OmmiBlog/posts/junior.crypt.2024-ctf/hash3.png" data-sub-html="<h2>Hash 3</h2>">
+        <img
+            class="lazyload"
+            src="/OmmiBlog/svg/loading.min.svg"
+            data-src="/OmmiBlog/posts/junior.crypt.2024-ctf/hash3.png"
+            data-srcset="/OmmiBlog/posts/junior.crypt.2024-ctf/hash3.png, /OmmiBlog/posts/junior.crypt.2024-ctf/hash3.png 1.5x, /OmmiBlog/posts/junior.crypt.2024-ctf/hash3.png 2x"
+            data-sizes="auto"
+            alt="Image showing third hash" width="1326" height="202" />
+    </a><figcaption class="image-caption">Hash 3</figcaption>
+    </figure>
+<p><strong>Flag:</strong> <code>grodno{lynlyn123}</code></p>
+<hr>
+<h2 id="reverse"><strong>Reverse</strong></h2>
+<h3 id="random-cipher-50-points"><strong>Random Cipher (50 Points)</strong></h3>
+<p><strong>Description:</strong><br>
+You have received an encryption procedure that uses random numbers and text encrypted with it. Restore the original message and find the flag in it.</p>
+<p><strong>Files:</strong></p>
+<ul>
+<li><a href="https://ctf-spcs.mf.grsu.by/files/0ed61c2e7ec8dd2d780d08523e871194/code_terror.py?token=eyJ1c2VyX2lkIjoxNjMwLCJ0ZWFtX2lkIjo4NjAsImZpbGVfaWQiOjEzOH0.ZrzSJA.o8cm_lWSpvJ7aMnP_WKQx-xMZBc" target="_blank" rel="noopener noreffer ">code_terror.py</a></li>
+<li><a href="https://ctf-spcs.mf.grsu.by/files/2cf081cd754e1e13fa85a7644091baad/terror.txt?token=eyJ1c2VyX2lkIjoxNjMwLCJ0ZWFtX2lkIjoxNjMwLCJ0ZWFtX2lkIjo4NjAsImZpbGVfaWQiOjEzOX0.ZrzSJA.NIvo0SkfYCHwJCiqfEJ4EMKupJs" target="_blank" rel="noopener noreffer ">terror.txt</a></li>
+</ul>
+<p><strong>Solution:</strong></p>
+<p>The Python code provided below decrypts the encrypted message using a random key.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">encrypt</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">key</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">%</span> <span class="n">key</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="n">key</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">result</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">decrypt</span><span class="p">(</span><span class="n">encrypted</span><span class="p">,</span> <span class="n">initial_key</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">key</span> <span class="o">=</span> <span class="n">initial_key</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">encrypted</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">m</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">m</span> <span class="o">-</span> <span class="n">r</span><span class="p">)</span> <span class="o">%</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">r</span> <span class="o">//</span> <span class="n">key</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">n</span> <span class="o">=</span> <span class="p">(</span><span class="n">m</span> <span class="o">-</span> <span class="n">r</span><span class="p">)</span> <span class="o">//</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">r</span> <span class="o">//</span> <span class="n">key</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="n">key</span> <span class="o">==</span> <span class="n">r</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">break</span>
+</span></span><span class="line"><span class="cl">        <span class="n">key</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&#34;__main__&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;terror.txt&#34;</span><span class="p">,</span> <span class="s2">&#34;r&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">encrypted_values</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&#34; &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">initial_key</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">encrypted_values</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">decrypted_message</span> <span class="o">=</span> <span class="n">decrypt</span><span class="p">(</span><span class="n">encrypted_values</span><span class="p">,</span> <span class="n">initial_key</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Decrypted message:&#34;</span><span class="p">,</span> <span class="n">decrypted_message</span><span class="p">)</span>
+</span></span></code></pre></div><p><strong>Flag:</strong> <code>grodno{xa-xa-xa-terrorist}</code></p>
+<hr>
+<h3 id="mutated-caesar-50-points"><strong>Mutated Caesar (50 Points)</strong></h3>
+<p><strong>Description:</strong><br>
+The Caesar Cipher has mutated. Now it works not only with English alphabet characters but also with a subset of ASCII characters.</p>
+<p><strong>Files:</strong></p>
+<ul>
+<li><a href="https://example.com/files/Caesare.py" target="_blank" rel="noopener noreffer ">Caesare.py</a> (Replace with actual link)</li>
+<li><a href="https://example.com/files/Caesare_out.txt" target="_blank" rel="noopener noreffer ">Caesare_out.txt</a> (Replace with actual link)</li>
+</ul>
+<p><strong>Solution:</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">hashlib</span> <span class="kn">import</span> <span class="n">md5</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">cipher</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;/:7,67Ct01;&#39;1;&#39;8:7*)*4A&#39;.-&gt;-:&#39;.:75&#39;&lt;0-&#39;=88-:&#39;n14-E&#39;&#39;&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">md5str</span> <span class="o">=</span> <span class="s1">&#39;14927c0edb1bfaf21c81d6b88ca9472a&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">n1</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mh">0x20</span><span class="p">,</span> <span class="mh">0x42</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">n2</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mh">0x7d</span><span class="p">,</span> <span class="mh">0x7f</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">n1</span> <span class="o">&gt;=</span> <span class="n">n2</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">continue</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">CN</span> <span class="o">=</span> <span class="p">{</span><span class="nb">chr</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="n">n1</span><span class="p">):</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n2</span> <span class="o">-</span> <span class="n">n1</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)}</span>
+</span></span><span class="line"><span class="cl">        <span class="n">NC</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="nb">chr</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="n">n1</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n2</span> <span class="o">-</span> <span class="n">n1</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">CN</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">decrypted</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">NC</span><span class="p">[(</span><span class="n">CN</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">-</span> <span class="n">key</span><span class="p">)</span> <span class="o">%</span> <span class="n">N</span><span class="p">]</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">cipher</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="n">decrypted</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;grodno{&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">decrypted</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;}&#39;</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">if</span> <span class="n">md5</span><span class="p">(</span><span class="n">decrypted</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span> <span class="o">==</span> <span class="n">md5str</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Found flag: </span><span class="si">{</span><span class="n">decrypted</span><span class="si">}</span><span class="s2"> with n1=</span><span class="si">{</span><span class="n">n1</span><span class="si">}</span><span class="s2">, n2=</span><span class="si">{</span><span class="n">n2</span><span class="si">}</span><span class="s2">, key=</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="k">continue</span>
+</span></span></code></pre></div><p><strong>Flag:</strong> <code>grodno{This_is_probably_fever_from_the_upper_Nile}</code></p>
+<hr>
+<h2 id="osint"><strong>OSINT</strong></h2>
+<p><strong>Introduction:</strong><br>
+OSINT (Open Source Intelligence) require creative thinking and detailed online research.
+Use tools like Google Image Search and Yandex.
+Gather clues from articles, forums, and databases.</p>
+<h3 id="capital-city-50-points"><strong>Capital City (50 Points)</strong></h3>
+<figure><a class="lightgallery" href="/OmmiBlog/posts/junior.crypt.2024-ctf/capital_sity.png" title="Image showing historical city photo" data-thumbnail="/OmmiBlog/posts/junior.crypt.2024-ctf/capital_sity.png" data-sub-html="<h2>Capital City Photo</h2>">
+        <img
+            class="lazyload"
+            src="/OmmiBlog/svg/loading.min.svg"
+            data-src="/OmmiBlog/posts/junior.crypt.2024-ctf/capital_sity.png"
+            data-srcset="/OmmiBlog/posts/junior.crypt.2024-ctf/capital_sity.png, /OmmiBlog/posts/junior.crypt.2024-ctf/capital_sity.png 1.5x, /OmmiBlog/posts/junior.crypt.2024-ctf/capital_sity.png 2x"
+            data-sizes="auto"
+            alt="Image showing historical city photo" width="745" height="420" />
+    </a><figcaption class="image-caption">Capital City Photo</figcaption>
+    </figure>
+<p><strong>Description:</strong>
+This photo was taken in a historically significant city, which has a rich past and has served as the capital of an important state. The photo includes names and landmarks that help identify the city.</p>
+<p><strong>Flag Format:</strong>
+grodno{City_Name;Country_Name}</p>
+<p><strong>Example:</strong>
+grodno{Novogrudok;Grand_Duchy_of_Lithuania}</p>
+<p><strong>Solution:</strong>
+After careful examination of the photo and historical research, I identified the city as Novogrudok, which was the capital of the Grand Duchy of Lithuania during its early years.</p>
+<p><strong>Flag:</strong> <code>grodno{Novogrudok;Grand_Duchy_of_Lithuania}</code></p>
+<hr>
+<h3 id="monument-to-cucumber-50-points"><strong>Monument to Cucumber (50 Points)</strong></h3>
+<figure><a class="lightgallery" href="/OmmiBlog/posts/junior.crypt.2024-ctf/ogurodets.png" title="Image showing monument to cucumber" data-thumbnail="/OmmiBlog/posts/junior.crypt.2024-ctf/ogurodets.png" data-sub-html="<h2>Monument to Cucumber</h2>">
+        <img
+            class="lazyload"
+            src="/OmmiBlog/svg/loading.min.svg"
+            data-src="/OmmiBlog/posts/junior.crypt.2024-ctf/ogurodets.png"
+            data-srcset="/OmmiBlog/posts/junior.crypt.2024-ctf/ogurodets.png, /OmmiBlog/posts/junior.crypt.2024-ctf/ogurodets.png 1.5x, /OmmiBlog/posts/junior.crypt.2024-ctf/ogurodets.png 2x"
+            data-sizes="auto"
+            alt="Image showing monument to cucumber" width="545" height="682" />
+    </a><figcaption class="image-caption">Monument to Cucumber</figcaption>
+    </figure>
+<p><strong>Description:</strong>
+This monument, dedicated to a cucumber, is located in the town of Shklov in the Mogilev region of Belarus. According to local legend, rubbing the bills in the pocket of the statue brings wealth, and stroking the flower is said to bring a new addition to the family.</p>
+<p><strong>Flag Format:</strong>
+grodno{CityName_StatueName}</p>
+<p><strong>Example:</strong>
+grodno{Novogrudok_Zubr}</p>
+<p><strong>Solution:</strong>
+<a href="https://vsuete.com/monument-to-a-cucumber-in-shklov/#google_vignette" target="_blank" rel="noopener noreffer ">The Monument to a cucumber</a> is located in Shklov, a town in the Mogilev region of Belarus. The statue is named “Ogurodets,” which translates to “Cucumber” in Russian. The flag format uses the city name “Shklov,” though it might be rendered as &ldquo;<a href="https://en.wikipedia.org/wiki/Shklow" target="_blank" rel="noopener noreffer ">Shklow</a>&rdquo; in certain transliterations. After solving it, I realized that the statue’s name is already given in the image file name,<code>ogurodets</code>.jpg</p>
+<p><strong>Flag:</strong> <code>grodno{Shklow_Ogurodets}</code></p>
+<hr>
+<h3 id="smugglers-50-points"><strong>Smugglers (50 Points)</strong></h3>
+<figure><a class="lightgallery" href="/OmmiBlog/posts/junior.crypt.2024-ctf/VW.png" title="Image showing legendary car" data-thumbnail="/OmmiBlog/posts/junior.crypt.2024-ctf/VW.png" data-sub-html="<h2>Legendary Car</h2>">
+        <img
+            class="lazyload"
+            src="/OmmiBlog/svg/loading.min.svg"
+            data-src="/OmmiBlog/posts/junior.crypt.2024-ctf/VW.png"
+            data-srcset="/OmmiBlog/posts/junior.crypt.2024-ctf/VW.png, /OmmiBlog/posts/junior.crypt.2024-ctf/VW.png 1.5x, /OmmiBlog/posts/junior.crypt.2024-ctf/VW.png 2x"
+            data-sizes="auto"
+            alt="Image showing legendary car" width="745" height="559" />
+    </a><figcaption class="image-caption">Legendary Car</figcaption>
+    </figure>
+<p><strong>Description:</strong><br>
+And take potatoes to the market, and diesel fuel across the border to Poland, and dear to the Belarusian soul&hellip; What is this legendary car?</p>
+<p><strong>Flag Format:</strong><br>
+<code>grodno{Brand_Model_Generation}</code></p>
+<p><strong>Example:</strong><br>
+<code>grodno{Volkswagen_Polo_V}</code></p>
+<p><strong>Solution:</strong>
+Based on research and confirmation from <a href="https://www.drive2.ru/l/6055470" target="_blank" rel="noopener noreffer ">this source</a>, the car referred to in the is the Volkswagen Passat B3.</p>
+<p><strong>Flag:</strong><code>grodno{Volkswagen_Passat_B3}</code></p>
+<hr>
+<h3 id="haute-couture-50-points"><strong>Haute Couture (50 Points)</strong></h3>
+<p><figure><a class="lightgallery" href="/OmmiBlog/posts/junior.crypt.2024-ctf/couture.jpg" title="Image showing haute couture models" data-thumbnail="/OmmiBlog/posts/junior.crypt.2024-ctf/couture.jpg" data-sub-html="<h2>Haute Couture Models</h2>">
+        <img
+            class="lazyload"
+            src="/OmmiBlog/svg/loading.min.svg"
+            data-src="/OmmiBlog/posts/junior.crypt.2024-ctf/couture.jpg"
+            data-srcset="/OmmiBlog/posts/junior.crypt.2024-ctf/couture.jpg, /OmmiBlog/posts/junior.crypt.2024-ctf/couture.jpg 1.5x, /OmmiBlog/posts/junior.crypt.2024-ctf/couture.jpg 2x"
+            data-sizes="auto"
+            alt="Image showing haute couture models" width="604" height="452" />
+    </a><figcaption class="image-caption">Haute Couture Models</figcaption>
+    </figure>
+<strong>Description:</strong><br>
+In what year were these models presented at a fashion show in Paris? To create these clothes, famous Valentino designers Maria Grazia Chiuri and Pierpaolo Piccioli drew inspiration from the paintings of the Belarusian artist Marc Chagall.</p>
+<p><strong>Flag Format:</strong><br>
+<code>grodno{year}</code></p>
+<p><strong>Solution:</strong><br>
+After thorough research and verification using Google Image Search, I discovered that the models in the provided image were part of the Valentino Haute Couture 2015 Spring/Summer Women&rsquo;s Collection, as documented in <a href="https://dk.pinterest.com/pin/655344183263748294/" target="_blank" rel="noopener noreffer ">this Pinterest post</a>.</p>
+<p><strong>Flag:</strong> <code>grodno{2015}</code></p>
+<hr>
+<h3 id="architect-of-grodno-50-points"><strong>Architect of Grodno (50 Points)</strong></h3>
+<figure><a class="lightgallery" href="/OmmiBlog/posts/junior.crypt.2024-ctf/antonij.png" title="Image showing sculpture of the architect of Grodno" data-thumbnail="/OmmiBlog/posts/junior.crypt.2024-ctf/antonij.png" data-sub-html="<h2>Architect of Grodno</h2>">
+        <img
+            class="lazyload"
+            src="/OmmiBlog/svg/loading.min.svg"
+            data-src="/OmmiBlog/posts/junior.crypt.2024-ctf/antonij.png"
+            data-srcset="/OmmiBlog/posts/junior.crypt.2024-ctf/antonij.png, /OmmiBlog/posts/junior.crypt.2024-ctf/antonij.png 1.5x, /OmmiBlog/posts/junior.crypt.2024-ctf/antonij.png 2x"
+            data-sizes="auto"
+            alt="Image showing sculpture of the architect of Grodno" width="745" height="559" />
+    </a><figcaption class="image-caption">Architect of Grodno</figcaption>
+    </figure>
+<p><strong>Description:</strong><br>
+In Grodno, on Eliza Ozheshko Street, next to the main building of our university, there is a sculpture of “men on a bench”. This sculpture also has an alternative name - “The Architect of the City Grodno”. But city residents know who exactly is holding the map of old Grodno in their hands. So who do our students see every time they go to university?</p>
+<p><strong>Flag Format:</strong><br>
+<code>grodno{Nam_Surname}</code></p>
+<p><strong>Example:</strong><br>
+<code>grodno{Jean-Claude_Van_Damme}</code></p>
+<p><strong>Solution:</strong>
+Through image search on Yandex, I identified that the person depicted in the sculpture is Giuseppe de Sacco, a notable architect who worked in Grodno.</p>
+<p><strong>Flag:</strong> <code>grodno{Giuseppe_de_Sacco}</code></p>
+<hr>
+<h3 id="world-of-tanks-50-points"><strong>World of Tanks (50 Points)</strong></h3>
+<figure><a class="lightgallery" href="/OmmiBlog/posts/junior.crypt.2024-ctf/airplane.png" title="Image showing World of Tanks-themed aircraft" data-thumbnail="/OmmiBlog/posts/junior.crypt.2024-ctf/airplane.png" data-sub-html="<h2>World of Tanks Aircraft</h2>">
+        <img
+            class="lazyload"
+            src="/OmmiBlog/svg/loading.min.svg"
+            data-src="/OmmiBlog/posts/junior.crypt.2024-ctf/airplane.png"
+            data-srcset="/OmmiBlog/posts/junior.crypt.2024-ctf/airplane.png, /OmmiBlog/posts/junior.crypt.2024-ctf/airplane.png 1.5x, /OmmiBlog/posts/junior.crypt.2024-ctf/airplane.png 2x"
+            data-sizes="auto"
+            alt="Image showing World of Tanks-themed aircraft" width="745" height="498" />
+    </a><figcaption class="image-caption">World of Tanks Aircraft</figcaption>
+    </figure>
+<p><strong>Description:</strong><br>
+On July 29, 2016, the Belarusian airline presented an aircraft in the colors of a popular computer game. Find which airline used this color scheme and name the aircraft model.</p>
+<p><strong>Flag Format:</strong><br>
+<code>grodno{AirlineName;Airplane_Model}</code></p>
+<p><strong>Example:</strong><br>
+<code>grodno{GrodnoLine;Antonov_24}</code></p>
+<p><strong>Solution:</strong><br>
+After extensive research, I confirmed that the Belarusian airline Belavia used this color scheme on a Boeing 737-300 aircraft, as seen in <a href="https://commons.wikimedia.org/wiki/File:Belavia_Boeing_737-300_World_of_Tanks_logojet_at_Kiev_Zhulyany.jpg" target="_blank" rel="noopener noreffer ">this Wikimedia image</a>.</p>
+<p><strong>Flag:</strong> <code>grodno{Belavia;Boeing_737-300}</code></p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 06-07-2024</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://ommibhatt.github.io/OmmiBlog/posts/junior.crypt.2024-ctf/" data-title="Junior.Crypt.2024 CTF" data-via="OmmiBhatt"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://ommibhatt.github.io/OmmiBlog/posts/junior.crypt.2024-ctf/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://ommibhatt.github.io/OmmiBlog/posts/junior.crypt.2024-ctf/"><i class="fab fa-linkedin fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/OmmiBlog/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/OmmiBlog/posts/bitguard-cybersecurity-hackthon/" class="prev" rel="prev" title="Bitguard Cybersecurity Hackthon"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Bitguard Cybersecurity Hackthon</a>
+            <a href="/OmmiBlog/posts/osctf/" class="next" rel="next" title="OSCTF">OSCTF<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="giscus" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://giscus.app">Giscus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.110.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://www.linkedin.com/in/om-bhatt-b92a4422a" target="_blank">Om Bhatt</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/OmmiBlog/lib/lightgallery/css/lightgallery-bundle.min.css"><script type="text/javascript" src="/OmmiBlog/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/OmmiBlog/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/OmmiBlog/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js"></script><script type="text/javascript" src="/OmmiBlog/lib/lightgallery/plugins/zoom/lg-zoom.min.js"></script><script type="text/javascript" src="/OmmiBlog/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/OmmiBlog/lib/sharer/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{"giscus":{"category":"Announcements","categoryId":"DIC_kwDONGPATs4CjtwX","darkTheme":"dark","emitMetadata":"0","inputPosition":"bottom","lang":"en","lazyLoading":false,"lightTheme":"light","mapping":"pathname","reactionsEnabled":"1","repo":"ommibhatt/OmmiBlog","repoId":"R_kgDONGPATg"}},"lightgallery":true};</script><script type="text/javascript" src="/OmmiBlog/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'G-7QKJQTSC2R', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-7QKJQTSC2R" async></script></body>
+</html>

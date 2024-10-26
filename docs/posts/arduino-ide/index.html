@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>How to Install Arduino IDE on Linux Without Port Issues - OmmiBlog</title>
+
+     </script><link rel="apple-touch-icon" sizes="180x180" href="/OmmiBlog/apple-touch-icon.png">
+     <link rel="icon" type="image/png" sizes="32x32" href="/OmmiBlog/favicon-32x32.png">
+     <link rel="icon" type="image/png" sizes="16x16" href="/OmmiBlog/favicon-16x16.png">
+     <link rel="manifest" href="/OmmiBlog/site.webmanifest">
+     <link rel="mask-icon" href="/OmmiBlog/safari-pinned-tab.svg" color="#5bbad5"><meta name="Description" content="A step-by-step guide to installing Arduino IDE on Linux and configuring it for smooth port access."><meta property="og:title" content="How to Install Arduino IDE on Linux Without Port Issues" />
+<meta property="og:description" content="A step-by-step guide to installing Arduino IDE on Linux and configuring it for smooth port access." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ommibhatt.github.io/OmmiBlog/posts/arduino-ide/" /><meta property="og:image" content="https://ommibhatt.github.io/OmmiBlog/arduino-ide.png" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-08-18T12:00:00+05:30" />
+<meta property="article:modified_time" content="2024-08-18T12:00:00+05:30" /><meta property="og:site_name" content="OmmiBlog" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://ommibhatt.github.io/OmmiBlog/arduino-ide.png"/>
+
+<meta name="twitter:title" content="How to Install Arduino IDE on Linux Without Port Issues"/>
+<meta name="twitter:description" content="A step-by-step guide to installing Arduino IDE on Linux and configuring it for smooth port access."/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://ommibhatt.github.io/OmmiBlog/posts/arduino-ide/" /><link rel="prev" href="https://ommibhatt.github.io/OmmiBlog/posts/website-with-hugo/" /><link rel="next" href="https://ommibhatt.github.io/OmmiBlog/posts/linux-performance/" /><link rel="stylesheet" href="/OmmiBlog/css/style.min.css"><link rel="preload" href="/OmmiBlog/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/OmmiBlog/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/OmmiBlog/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/OmmiBlog/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "How to Install Arduino IDE on Linux Without Port Issues",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/ommibhatt.github.io\/OmmiBlog\/posts\/arduino-ide\/"
+        },"genre": "posts","wordcount":  624 ,
+        "url": "https:\/\/ommibhatt.github.io\/OmmiBlog\/posts\/arduino-ide\/","datePublished": "2024-08-18T12:00:00+05:30","dateModified": "2024-08-18T12:00:00+05:30","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Om Bhatt"
+            },"description": "A step-by-step guide to installing Arduino IDE on Linux and configuring it for smooth port access."
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/OmmiBlog/" title="OmmiBlog">Ommi</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/OmmiBlog/"><i class='fas fa-home fa-fw' aria-hidden='true'></i> Home </a><a class="menu-item" href="/OmmiBlog/categories/blogs"><i class='fas fa-blog fa-fw' aria-hidden='true'></i> Blogs </a><a class="menu-item" href="/OmmiBlog/categories/writeups"><i class='fas fa-pencil-alt fa-fw' aria-hidden='true'></i> Writeups </a><a class="menu-item" href="/OmmiBlog/about"><i class='fas fa-info-circle fa-fw' aria-hidden='true'></i> About </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/OmmiBlog/" title="OmmiBlog">Ommi</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/OmmiBlog/" title=""><i class='fas fa-home fa-fw' aria-hidden='true'></i>Home</a><a class="menu-item" href="/OmmiBlog/categories/blogs" title=""><i class='fas fa-blog fa-fw' aria-hidden='true'></i>Blogs</a><a class="menu-item" href="/OmmiBlog/categories/writeups" title=""><i class='fas fa-pencil-alt fa-fw' aria-hidden='true'></i>Writeups</a><a class="menu-item" href="/OmmiBlog/about" title=""><i class='fas fa-info-circle fa-fw' aria-hidden='true'></i>About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">How to Install Arduino IDE on Linux Without Port Issues</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://www.linkedin.com/in/om-bhatt-b92a4422a" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Om Bhatt</a></span>&nbsp;<span class="post-category">included in <a href="/OmmiBlog/categories/blogs/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Blogs</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="18-08-2024">18-08-2024</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;624 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;3 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/OmmiBlog/svg/loading.min.svg"
+        data-src="/OmmiBlog/posts/arduino-ide/arduino-ide.png"
+        data-srcset="/OmmiBlog/posts/arduino-ide/arduino-ide.png, /OmmiBlog/posts/arduino-ide/arduino-ide.png 1.5x, /OmmiBlog/posts/arduino-ide/arduino-ide.png 2x"
+        data-sizes="auto"
+        alt="/OmmiBlog/posts/arduino-ide/arduino-ide.png"
+        title="A step-by-step guide to installing Arduino IDE on Linux and configuring it for smooth port access." width="2325" height="703" /></div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#installing-arduino-ide-on-linux"><strong>Installing Arduino IDE on Linux</strong></a>
+      <ul>
+        <li><a href="#download-arduino-ide"><strong>Download Arduino IDE</strong></a></li>
+        <li><a href="#make-the-appimage-executable"><strong>Make the AppImage Executable</strong></a></li>
+        <li><a href="#create-a-desktop-entry"><strong>Create a Desktop Entry</strong></a></li>
+        <li><a href="#configure-serial-port-access"><strong>Configure Serial Port Access</strong></a></li>
+        <li><a href="#add-esp32-and-esp8266-board-support"><strong>Add ESP32 and ESP8266 Board Support</strong></a></li>
+        <li><a href="#verify-installation"><strong>Verify Installation</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="installing-arduino-ide-on-linux"><strong>Installing Arduino IDE on Linux</strong></h2>
+<p>Arduino IDE is essential for developing and uploading code to Arduino boards. This guide will walk you through installing Arduino IDE on Linux and configuring it to handle serial ports properly, including adding support for ESP32 and ESP8266 boards.</p>
+<hr>
+<h3 id="download-arduino-ide"><strong>Download Arduino IDE</strong></h3>
+<p>First, download the Arduino IDE AppImage suitable for your Linux system:</p>
+<ul>
+<li><strong>Download Link:</strong> <a href="https://downloads.arduino.cc/arduino-ide/arduino-ide_2.3.2_Linux_64bit.AppImage" target="_blank" rel="noopener noreffer ">arduino-ide_2.3.2_Linux_64bit.AppImage</a></li>
+</ul>
+<hr>
+<h3 id="make-the-appimage-executable"><strong>Make the AppImage Executable</strong></h3>
+<p>After downloading, you need to make the AppImage executable:</p>
+<ol>
+<li>
+<p>Open your terminal and navigate to the directory where you downloaded the AppImage:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> ~/Downloads
+</span></span></code></pre></div></li>
+<li>
+<p>Run the following command to make it executable:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chmod +x arduino-ide_2.3.2_Linux_64bit.AppImage
+</span></span></code></pre></div></li>
+</ol>
+<hr>
+<h3 id="create-a-desktop-entry"><strong>Create a Desktop Entry</strong></h3>
+<p>To integrate Arduino IDE into your system’s application menu:</p>
+<ol>
+<li>
+<p>Create a new <code>.desktop</code> file:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nano ~/.local/share/applications/arduino.desktop
+</span></span></code></pre></div></li>
+<li>
+<p>Add the following content to the file:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">[Desktop Entry]
+</span></span><span class="line"><span class="cl">Type=Application
+</span></span><span class="line"><span class="cl">Name=Arduino IDE 2.0
+</span></span><span class="line"><span class="cl">Exec=/home/ommi/Downloads/arduino-ide_2.3.2_Linux_64bit.AppImage
+</span></span><span class="line"><span class="cl">Icon=/home/ommi/Downloads/arduino-ide.png
+</span></span><span class="line"><span class="cl">Terminal=false
+</span></span></code></pre></div></li>
+<li>
+<p>Save and close the file (in <code>nano</code>, press <code>Ctrl+o</code>, then <code>Enter</code>, then <code>Ctrl+x</code>).</p>
+</li>
+</ol>
+<p>Make sure to adjust the <code>Exec</code> and <code>Icon</code> paths according to where you have saved the AppImage and the icon file.</p>
+<hr>
+<h3 id="configure-serial-port-access"><strong>Configure Serial Port Access</strong></h3>
+<p>Proper access to serial ports is crucial for communicating with Arduino boards:</p>
+<ol>
+<li>
+<p><strong>List Available Ports:</strong></p>
+<p>To identify the available serial ports on your system, use the following command:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ls /dev/tty*
+</span></span></code></pre></div><p>This will list all available ports on your machine. Here’s an example output:</p>
+<figure><a class="lightgallery" href="/OmmiBlog/posts/arduino-ide/usb_port.png" title="Available USB Ports on Linux" data-thumbnail="/OmmiBlog/posts/arduino-ide/usb_port.png" data-sub-html="<h2>USB Port List</h2>">
+            <img
+                class="lazyload"
+                src="/OmmiBlog/svg/loading.min.svg"
+                data-src="/OmmiBlog/posts/arduino-ide/usb_port.png"
+                data-srcset="/OmmiBlog/posts/arduino-ide/usb_port.png, /OmmiBlog/posts/arduino-ide/usb_port.png 1.5x, /OmmiBlog/posts/arduino-ide/usb_port.png 2x"
+                data-sizes="auto"
+                alt="Available USB Ports on Linux" width="659" height="476" />
+        </a><figcaption class="image-caption">USB Port List</figcaption>
+        </figure>
+</li>
+<li>
+<p><strong>Install Required Libraries:</strong></p>
+<p>Install <code>libfuse2</code> for AppImage compatibility:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt install libfuse2
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Add User to Dialout Group:</strong></p>
+<p>Adding your user to the <code>dialout</code> group allows access to serial ports:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo usermod -a -G dialout <span class="nv">$USER</span>
+</span></span></code></pre></div><p><strong>Note:</strong> Log out and log back in for this change to take effect.</p>
+</li>
+<li>
+<p><strong>Remove Brltty Package:</strong></p>
+<p>The <code>brltty</code> package can interfere with serial port operations:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt-get remove brltty
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Set Permissions for USB Serial Devices:</strong></p>
+<p>Without proper permissions, connecting an Arduino board (like Arduino Uno) might result in a permission denied error. Here&rsquo;s an example error message:</p>
+<figure><a class="lightgallery" href="/OmmiBlog/posts/arduino-ide/port_denied.png" title="Permission denied when accessing Arduino port" data-thumbnail="/OmmiBlog/posts/arduino-ide/port_denied.png" data-sub-html="<h2>Permission Denied Error</h2>">
+            <img
+                class="lazyload"
+                src="/OmmiBlog/svg/loading.min.svg"
+                data-src="/OmmiBlog/posts/arduino-ide/port_denied.png"
+                data-srcset="/OmmiBlog/posts/arduino-ide/port_denied.png, /OmmiBlog/posts/arduino-ide/port_denied.png 1.5x, /OmmiBlog/posts/arduino-ide/port_denied.png 2x"
+                data-sizes="auto"
+                alt="Permission denied when accessing Arduino port" width="915" height="631" />
+        </a><figcaption class="image-caption">Permission Denied Error</figcaption>
+        </figure>
+<p>To fix this issue, adjust the permissions for the USB serial device with the following command:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo chmod a+rw /dev/ttyUSB0
+</span></span></code></pre></div><p>After running this command, you should have access to the port without errors:</p>
+<figure><a class="lightgallery" href="/OmmiBlog/posts/arduino-ide/port_access.png" title="Arduino port access granted" data-thumbnail="/OmmiBlog/posts/arduino-ide/port_access.png" data-sub-html="<h2>Access to Port Granted</h2>">
+            <img
+                class="lazyload"
+                src="/OmmiBlog/svg/loading.min.svg"
+                data-src="/OmmiBlog/posts/arduino-ide/port_access.png"
+                data-srcset="/OmmiBlog/posts/arduino-ide/port_access.png, /OmmiBlog/posts/arduino-ide/port_access.png 1.5x, /OmmiBlog/posts/arduino-ide/port_access.png 2x"
+                data-sizes="auto"
+                alt="Arduino port access granted" width="1366" height="735" />
+        </a><figcaption class="image-caption">Access to Port Granted</figcaption>
+        </figure>
+</li>
+</ol>
+<p><strong>Note:</strong> If you change the board or connect it to a different USB port, the device name might change to something like <code>/dev/ttyUSB1</code> or <code>/dev/ttyUSB2</code>. In such cases, you will need to rerun the above command with the correct port name, replacing <code>/dev/ttyUSB0</code> with the current port (e.g., <code>/dev/ttyUSB1</code>).</p>
+<hr>
+<h3 id="add-esp32-and-esp8266-board-support"><strong>Add ESP32 and ESP8266 Board Support</strong></h3>
+<p>To program ESP32 and ESP8266 boards with the Arduino IDE, you need to add the appropriate board manager URLs:</p>
+<ol>
+<li>
+<p>Open Arduino IDE and navigate to:</p>
+<p><strong>File &gt; Preferences</strong></p>
+</li>
+<li>
+<p>In the <strong>Settings</strong> section, find the field for <strong>Additional Boards Manager URLs</strong>.</p>
+</li>
+<li>
+<p>Add the following URLs (separated by a comma):</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">https://arduino.esp8266.com/stable/package_esp8266com_index.json, https://espressif.github.io/arduino-esp32/package_esp32_index.json
+</span></span></code></pre></div></li>
+<li>
+<p>Click <strong>OK</strong> to save your preferences.</p>
+</li>
+<li>
+<p>After adding the URLs, go to:</p>
+<p><strong>Tools &gt; Board &gt; Boards Manager</strong></p>
+</li>
+<li>
+<p>In the Boards Manager, search for <strong>ESP8266</strong> and <strong>ESP32</strong> and install the respective packages.</p>
+</li>
+</ol>
+<p>Here is a screenshot of the board manager in Arduino IDE:</p>
+<figure><a class="lightgallery" href="/OmmiBlog/posts/arduino-ide/IDE.png" title="Arduino IDE board manager for ESP8266 and ESP32" data-thumbnail="/OmmiBlog/posts/arduino-ide/IDE.png" data-sub-html="<h2>Arduino IDE Boards Manager</h2>">
+        <img
+            class="lazyload"
+            src="/OmmiBlog/svg/loading.min.svg"
+            data-src="/OmmiBlog/posts/arduino-ide/IDE.png"
+            data-srcset="/OmmiBlog/posts/arduino-ide/IDE.png, /OmmiBlog/posts/arduino-ide/IDE.png 1.5x, /OmmiBlog/posts/arduino-ide/IDE.png 2x"
+            data-sizes="auto"
+            alt="Arduino IDE board manager for ESP8266 and ESP32" width="1366" height="735" />
+    </a><figcaption class="image-caption">Arduino IDE Boards Manager</figcaption>
+    </figure>
+<hr>
+<h3 id="verify-installation"><strong>Verify Installation</strong></h3>
+<p>To ensure that Arduino IDE is installed correctly:</p>
+<ol>
+<li>Launch Arduino IDE from your applications menu.</li>
+<li>Connect your Arduino or ESP board and check if it appears in the <strong>Tools &gt; Port</strong> menu.</li>
+<li>Select the appropriate board (e.g., ESP32, ESP8266) from <strong>Tools &gt; Board</strong>.</li>
+</ol>
+<p><strong>If you encounter issues:</strong></p>
+<ul>
+<li>Verify that the AppImage is executable.</li>
+<li>Confirm that you have the necessary permissions to access serial ports.</li>
+<li>Ensure that <code>brltty</code> is removed if it was causing conflicts.</li>
+</ul>
+<p>For more help, consult the <a href="https://www.arduino.cc/en/Guide/Linux" target="_blank" rel="noopener noreffer ">Arduino documentation</a>.</p>
+<hr>
+<p><strong>This guide helps you set up the Arduino IDE on Linux and handle common port access issues, including adding support for ESP32 and ESP8266 boards. For additional tips and tutorials on Linux and programming, follow our blog!</strong></p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 18-08-2024</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://ommibhatt.github.io/OmmiBlog/posts/arduino-ide/" data-title="How to Install Arduino IDE on Linux Without Port Issues" data-via="OmmiBhatt"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://ommibhatt.github.io/OmmiBlog/posts/arduino-ide/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://ommibhatt.github.io/OmmiBlog/posts/arduino-ide/"><i class="fab fa-linkedin fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/OmmiBlog/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/OmmiBlog/posts/website-with-hugo/" class="prev" rel="prev" title="How To Build a Static Website With Hugo"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>How To Build a Static Website With Hugo</a>
+            <a href="/OmmiBlog/posts/linux-performance/" class="next" rel="next" title="How to Boost Performance on Any Linux System">How to Boost Performance on Any Linux System<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="giscus" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://giscus.app">Giscus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.110.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://www.linkedin.com/in/om-bhatt-b92a4422a" target="_blank">Om Bhatt</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/OmmiBlog/lib/lightgallery/css/lightgallery-bundle.min.css"><script type="text/javascript" src="/OmmiBlog/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/OmmiBlog/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/OmmiBlog/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js"></script><script type="text/javascript" src="/OmmiBlog/lib/lightgallery/plugins/zoom/lg-zoom.min.js"></script><script type="text/javascript" src="/OmmiBlog/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/OmmiBlog/lib/sharer/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{"giscus":{"category":"Announcements","categoryId":"DIC_kwDONGPATs4CjtwX","darkTheme":"dark","emitMetadata":"0","inputPosition":"bottom","lang":"en","lazyLoading":false,"lightTheme":"light","mapping":"pathname","reactionsEnabled":"1","repo":"ommibhatt/OmmiBlog","repoId":"R_kgDONGPATg"}},"lightgallery":true};</script><script type="text/javascript" src="/OmmiBlog/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'G-7QKJQTSC2R', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-7QKJQTSC2R" async></script></body>
+</html>

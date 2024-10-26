@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>OSCTF - OmmiBlog</title>
+
+     </script><link rel="apple-touch-icon" sizes="180x180" href="/OmmiBlog/apple-touch-icon.png">
+     <link rel="icon" type="image/png" sizes="32x32" href="/OmmiBlog/favicon-32x32.png">
+     <link rel="icon" type="image/png" sizes="16x16" href="/OmmiBlog/favicon-16x16.png">
+     <link rel="manifest" href="/OmmiBlog/site.webmanifest">
+     <link rel="mask-icon" href="/OmmiBlog/safari-pinned-tab.svg" color="#5bbad5"><meta name="Description" content="A detailed writeup of my experience and solutions during the OSCTF"><meta property="og:title" content="OSCTF" />
+<meta property="og:description" content="A detailed writeup of my experience and solutions during the OSCTF" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ommibhatt.github.io/OmmiBlog/posts/osctf/" /><meta property="og:image" content="https://ommibhatt.github.io/OmmiBlog/osctf.png" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-07-15T12:00:00+05:30" />
+<meta property="article:modified_time" content="2024-07-15T12:00:00+05:30" /><meta property="og:site_name" content="OmmiBlog" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://ommibhatt.github.io/OmmiBlog/osctf.png"/>
+
+<meta name="twitter:title" content="OSCTF"/>
+<meta name="twitter:description" content="A detailed writeup of my experience and solutions during the OSCTF"/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://ommibhatt.github.io/OmmiBlog/posts/osctf/" /><link rel="prev" href="https://ommibhatt.github.io/OmmiBlog/posts/junior.crypt.2024-ctf/" /><link rel="next" href="https://ommibhatt.github.io/OmmiBlog/posts/imaginary-ctf-2024/" /><link rel="stylesheet" href="/OmmiBlog/css/style.min.css"><link rel="preload" href="/OmmiBlog/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/OmmiBlog/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/OmmiBlog/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/OmmiBlog/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "OSCTF",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/ommibhatt.github.io\/OmmiBlog\/posts\/osctf\/"
+        },"genre": "posts","wordcount":  207 ,
+        "url": "https:\/\/ommibhatt.github.io\/OmmiBlog\/posts\/osctf\/","datePublished": "2024-07-15T12:00:00+05:30","dateModified": "2024-07-15T12:00:00+05:30","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Om Bhatt"
+            },"description": "A detailed writeup of my experience and solutions during the OSCTF"
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/OmmiBlog/" title="OmmiBlog">Ommi</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/OmmiBlog/"><i class='fas fa-home fa-fw' aria-hidden='true'></i> Home </a><a class="menu-item" href="/OmmiBlog/categories/blogs"><i class='fas fa-blog fa-fw' aria-hidden='true'></i> Blogs </a><a class="menu-item" href="/OmmiBlog/categories/writeups"><i class='fas fa-pencil-alt fa-fw' aria-hidden='true'></i> Writeups </a><a class="menu-item" href="/OmmiBlog/about"><i class='fas fa-info-circle fa-fw' aria-hidden='true'></i> About </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/OmmiBlog/" title="OmmiBlog">Ommi</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/OmmiBlog/" title=""><i class='fas fa-home fa-fw' aria-hidden='true'></i>Home</a><a class="menu-item" href="/OmmiBlog/categories/blogs" title=""><i class='fas fa-blog fa-fw' aria-hidden='true'></i>Blogs</a><a class="menu-item" href="/OmmiBlog/categories/writeups" title=""><i class='fas fa-pencil-alt fa-fw' aria-hidden='true'></i>Writeups</a><a class="menu-item" href="/OmmiBlog/about" title=""><i class='fas fa-info-circle fa-fw' aria-hidden='true'></i>About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">OSCTF</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://www.linkedin.com/in/om-bhatt-b92a4422a" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Om Bhatt</a></span>&nbsp;<span class="post-category">included in <a href="/OmmiBlog/categories/writeups/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Writeups</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="15-07-2024">15-07-2024</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;207 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;One minute&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/OmmiBlog/svg/loading.min.svg"
+        data-src="/OmmiBlog/posts/osctf/osctf.png"
+        data-srcset="/OmmiBlog/posts/osctf/osctf.png, /OmmiBlog/posts/osctf/osctf.png 1.5x, /OmmiBlog/posts/osctf/osctf.png 2x"
+        data-sizes="auto"
+        alt="/OmmiBlog/posts/osctf/osctf.png"
+        title="A detailed writeup of my experience and solutions during the OSCTF" width="1488" height="450" /></div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#osctf"><strong>OSCTF</strong></a></li>
+    <li><a href="#forensics"><strong>Forensics</strong></a>
+      <ul>
+        <li><a href="#soul-vellorei"><strong>Soul Vellorei</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#osint"><strong>OSINT</strong></a>
+      <ul>
+        <li><a href="#vietnam-tourist-1"><strong>Vietnam Tourist 1</strong></a></li>
+        <li><a href="#the-statue-is-being-repaired"><strong>The statue is being repaired</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="osctf"><strong>OSCTF</strong></h2>
+<h2 id="forensics"><strong>Forensics</strong></h2>
+<h3 id="soul-vellorei"><strong>Soul Vellorei</strong></h3>
+<p><strong>Description:</strong>
+Seele Vollerei is an orphaned girl in Cocolia’s Orphanage. But the tragic event in her past made that she was gone forever, until then she returned like a mysterious butterfly. How is this related to the challenge though? You figure out for youself.</p>
+<p><strong>Solution:</strong>
+open that pdf in word and search for <code>OSCTF</code> Whole document and found text <code>OSCTF{V3l10n4_1s_Gr43t}</code> behind the image of  Vollerei</p>
+<figure><a class="lightgallery" href="/OmmiBlog/posts/osctf/Vellorei.png" title="Image showing Soul Vellorei" data-thumbnail="/OmmiBlog/posts/osctf/Vellorei.png" data-sub-html="<h2>Vellorei</h2>">
+        <img
+            class="lazyload"
+            src="/OmmiBlog/svg/loading.min.svg"
+            data-src="/OmmiBlog/posts/osctf/Vellorei.png"
+            data-srcset="/OmmiBlog/posts/osctf/Vellorei.png, /OmmiBlog/posts/osctf/Vellorei.png 1.5x, /OmmiBlog/posts/osctf/Vellorei.png 2x"
+            data-sizes="auto"
+            alt="Image showing Soul Vellorei" width="553" height="595" />
+    </a><figcaption class="image-caption">Vellorei</figcaption>
+    </figure>
+<hr>
+<h2 id="osint"><strong>OSINT</strong></h2>
+<h3 id="vietnam-tourist-1"><strong>Vietnam Tourist 1</strong></h3>
+<figure><a class="lightgallery" href="/OmmiBlog/posts/osctf/Vietnam_Tourist_1.png" title="Vietnam Tourist Mausoleum" data-thumbnail="/OmmiBlog/posts/osctf/Vietnam_Tourist_1.png" data-sub-html="<h2>Vietnam Tourist 1</h2>">
+        <img
+            class="lazyload"
+            src="/OmmiBlog/svg/loading.min.svg"
+            data-src="/OmmiBlog/posts/osctf/Vietnam_Tourist_1.png"
+            data-srcset="/OmmiBlog/posts/osctf/Vietnam_Tourist_1.png, /OmmiBlog/posts/osctf/Vietnam_Tourist_1.png 1.5x, /OmmiBlog/posts/osctf/Vietnam_Tourist_1.png 2x"
+            data-sizes="auto"
+            alt="Vietnam Tourist Mausoleum" width="745" height="391" />
+    </a><figcaption class="image-caption">Vietnam Tourist 1</figcaption>
+    </figure>
+<p><strong>Description:</strong>
+What a Mausoleum! It&rsquo;s Ho Chi Minh Mausoleum or in Vietnamese is Lăng chủ tịch Hồ Chí Minh.
+My tourist travel guide ask me some history questions, one of them is when was he born ? Would you mind finding the answer for me ?</p>
+<p><strong>Flag format:</strong> OSCTF{dd-mm-yyyy}</p>
+<p><strong>Solution:</strong>
+I using chatgpt for that and got it flag</p>
+<p><strong>Flag:</strong> <code>OSCTF{19-05-1890}</code></p>
+<hr>
+<h3 id="the-statue-is-being-repaired"><strong>The statue is being repaired</strong></h3>
+<figure><a class="lightgallery" href="/OmmiBlog/posts/osctf/statue.png" title="Self-Made Man statue at FPT University" data-thumbnail="/OmmiBlog/posts/osctf/statue.png" data-sub-html="<h2>Self-Made Man Statue</h2>">
+        <img
+            class="lazyload"
+            src="/OmmiBlog/svg/loading.min.svg"
+            data-src="/OmmiBlog/posts/osctf/statue.png"
+            data-srcset="/OmmiBlog/posts/osctf/statue.png, /OmmiBlog/posts/osctf/statue.png 1.5x, /OmmiBlog/posts/osctf/statue.png 2x"
+            data-sizes="auto"
+            alt="Self-Made Man statue at FPT University" width="445" height="594" />
+    </a><figcaption class="image-caption">Self-Made Man Statue</figcaption>
+    </figure>
+<p><strong>Description:</strong>
+This statue is typical of an university, can you find out the name of the statue and the city where it exists?</p>
+<p><strong>Format flag:</strong> OSCTF{name of statue_city}</p>
+<p>If the name of the statue is Statue of Liberty at New York, US, the flag will be: OSCTF{statueofliberty_newyork}</p>
+<p><strong>Solution:</strong>
+search for statue at FPT University and got it name <a href="https://commons.wikimedia.org/wiki/File:Self-made_Man_statue_at_FPT_University_Ha_Noi.jpg" target="_blank" rel="noopener noreffer ">selfmademan</a></p>
+<p><strong>Flag:</strong> <code>OSCTF{selfmademan_hochiminh}</code></p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 15-07-2024</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://ommibhatt.github.io/OmmiBlog/posts/osctf/" data-title="OSCTF" data-via="OmmiBhatt"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://ommibhatt.github.io/OmmiBlog/posts/osctf/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://ommibhatt.github.io/OmmiBlog/posts/osctf/"><i class="fab fa-linkedin fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/OmmiBlog/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/OmmiBlog/posts/junior.crypt.2024-ctf/" class="prev" rel="prev" title="Junior.Crypt.2024 CTF"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Junior.Crypt.2024 CTF</a>
+            <a href="/OmmiBlog/posts/imaginary-ctf-2024/" class="next" rel="next" title="ImaginaryCTF 2024">ImaginaryCTF 2024<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="giscus" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://giscus.app">Giscus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.110.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://www.linkedin.com/in/om-bhatt-b92a4422a" target="_blank">Om Bhatt</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/OmmiBlog/lib/lightgallery/css/lightgallery-bundle.min.css"><script type="text/javascript" src="/OmmiBlog/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/OmmiBlog/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/OmmiBlog/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js"></script><script type="text/javascript" src="/OmmiBlog/lib/lightgallery/plugins/zoom/lg-zoom.min.js"></script><script type="text/javascript" src="/OmmiBlog/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/OmmiBlog/lib/sharer/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{"giscus":{"category":"Announcements","categoryId":"DIC_kwDONGPATs4CjtwX","darkTheme":"dark","emitMetadata":"0","inputPosition":"bottom","lang":"en","lazyLoading":false,"lightTheme":"light","mapping":"pathname","reactionsEnabled":"1","repo":"ommibhatt/OmmiBlog","repoId":"R_kgDONGPATg"}},"lightgallery":true};</script><script type="text/javascript" src="/OmmiBlog/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'G-7QKJQTSC2R', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-7QKJQTSC2R" async></script></body>
+</html>

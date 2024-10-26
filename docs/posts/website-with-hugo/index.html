@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>How To Build a Static Website With Hugo - OmmiBlog</title>
+
+     </script><link rel="apple-touch-icon" sizes="180x180" href="/OmmiBlog/apple-touch-icon.png">
+     <link rel="icon" type="image/png" sizes="32x32" href="/OmmiBlog/favicon-32x32.png">
+     <link rel="icon" type="image/png" sizes="16x16" href="/OmmiBlog/favicon-16x16.png">
+     <link rel="manifest" href="/OmmiBlog/site.webmanifest">
+     <link rel="mask-icon" href="/OmmiBlog/safari-pinned-tab.svg" color="#5bbad5"><meta name="Description" content="A comprehensive guide to building a fast and flexible static website using Hugo."><meta property="og:title" content="How To Build a Static Website With Hugo" />
+<meta property="og:description" content="A comprehensive guide to building a fast and flexible static website using Hugo." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ommibhatt.github.io/OmmiBlog/posts/website-with-hugo/" /><meta property="og:image" content="https://ommibhatt.github.io/OmmiBlog/static-site-generator.png" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-08-17T20:19:43+05:30" />
+<meta property="article:modified_time" content="2024-08-17T20:19:43+05:30" /><meta property="og:site_name" content="OmmiBlog" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://ommibhatt.github.io/OmmiBlog/static-site-generator.png"/>
+
+<meta name="twitter:title" content="How To Build a Static Website With Hugo"/>
+<meta name="twitter:description" content="A comprehensive guide to building a fast and flexible static website using Hugo."/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://ommibhatt.github.io/OmmiBlog/posts/website-with-hugo/" /><link rel="prev" href="https://ommibhatt.github.io/OmmiBlog/posts/how-to-safely-uninstall-linux/" /><link rel="next" href="https://ommibhatt.github.io/OmmiBlog/posts/arduino-ide/" /><link rel="stylesheet" href="/OmmiBlog/css/style.min.css"><link rel="preload" href="/OmmiBlog/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/OmmiBlog/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/OmmiBlog/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/OmmiBlog/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "How To Build a Static Website With Hugo",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/ommibhatt.github.io\/OmmiBlog\/posts\/website-with-hugo\/"
+        },"genre": "posts","wordcount":  461 ,
+        "url": "https:\/\/ommibhatt.github.io\/OmmiBlog\/posts\/website-with-hugo\/","datePublished": "2024-08-17T20:19:43+05:30","dateModified": "2024-08-17T20:19:43+05:30","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Om Bhatt"
+            },"description": "A comprehensive guide to building a fast and flexible static website using Hugo."
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/OmmiBlog/" title="OmmiBlog">Ommi</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/OmmiBlog/"><i class='fas fa-home fa-fw' aria-hidden='true'></i> Home </a><a class="menu-item" href="/OmmiBlog/categories/blogs"><i class='fas fa-blog fa-fw' aria-hidden='true'></i> Blogs </a><a class="menu-item" href="/OmmiBlog/categories/writeups"><i class='fas fa-pencil-alt fa-fw' aria-hidden='true'></i> Writeups </a><a class="menu-item" href="/OmmiBlog/about"><i class='fas fa-info-circle fa-fw' aria-hidden='true'></i> About </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/OmmiBlog/" title="OmmiBlog">Ommi</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/OmmiBlog/" title=""><i class='fas fa-home fa-fw' aria-hidden='true'></i>Home</a><a class="menu-item" href="/OmmiBlog/categories/blogs" title=""><i class='fas fa-blog fa-fw' aria-hidden='true'></i>Blogs</a><a class="menu-item" href="/OmmiBlog/categories/writeups" title=""><i class='fas fa-pencil-alt fa-fw' aria-hidden='true'></i>Writeups</a><a class="menu-item" href="/OmmiBlog/about" title=""><i class='fas fa-info-circle fa-fw' aria-hidden='true'></i>About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">How To Build a Static Website With Hugo</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://www.linkedin.com/in/om-bhatt-b92a4422a" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Om Bhatt</a></span>&nbsp;<span class="post-category">included in <a href="/OmmiBlog/categories/blogs/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Blogs</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="17-08-2024">17-08-2024</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;461 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;3 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/OmmiBlog/svg/loading.min.svg"
+        data-src="/OmmiBlog/posts/website-with-hugo/static-site-generator.png"
+        data-srcset="/OmmiBlog/posts/website-with-hugo/static-site-generator.png, /OmmiBlog/posts/website-with-hugo/static-site-generator.png 1.5x, /OmmiBlog/posts/website-with-hugo/static-site-generator.png 2x"
+        data-sizes="auto"
+        alt="/OmmiBlog/posts/website-with-hugo/static-site-generator.png"
+        title="A comprehensive guide to building a fast and flexible static website using Hugo." width="1488" height="450" /></div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#hugo"><strong>HUGO</strong></a></li>
+    <li><a href="#what-is-hugo"><strong>What Is Hugo?</strong></a>
+      <ul>
+        <li><a href="#why-choose-hugo"><strong>Why Choose Hugo?</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#how-to-install-hugo"><strong>How to Install Hugo</strong></a>
+      <ul>
+        <li><a href="#ubuntudebian"><strong>Ubuntu/Debian:</strong></a></li>
+        <li><a href="#arch"><strong>Arch:</strong></a></li>
+        <li><a href="#fedora"><strong>Fedora:</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#hugo-commands-and-configuration"><strong>Hugo Commands and Configuration</strong></a>
+      <ul>
+        <li><a href="#the-hugo-configuration-file"><strong>The Hugo Configuration File:</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#how-to-create-a-hugo-site"><strong>How To Create a Hugo Site</strong></a></li>
+    <li><a href="#how-to-add-a-theme-to-a-hugo-site"><strong>How To Add a Theme to a Hugo Site</strong></a>
+      <ul>
+        <li><a href="#option-1-clone-the-theme"><strong>Option 1: Clone the Theme</strong></a></li>
+        <li><a href="#option-2-use-as-a-submodule"><strong>Option 2: Use as a Submodule</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#how-to-preview-a-hugo-site"><strong>How To Preview a Hugo Site</strong></a></li>
+    <li><a href="#how-to-deploy-a-hugo-site-to-github"><strong>How To Deploy a Hugo Site to GitHub</strong></a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="hugo"><strong>HUGO</strong></h2>
+<h2 id="what-is-hugo"><strong>What Is Hugo?</strong></h2>
+<p>Hugo is a powerful static site generator written in Go, optimized for speed and flexibility. It boasts an advanced templating system and fast asset pipelines, allowing you to render a complete site in seconds.</p>
+<hr>
+<h3 id="why-choose-hugo"><strong>Why Choose Hugo?</strong></h3>
+<p>Hugo’s flexibility and multilingual support make it ideal for various types of sites, including:</p>
+<ul>
+<li>Corporate, government, nonprofit, and education sites</li>
+<li>Documentation sites</li>
+<li>Image portfolios</li>
+<li>Landing pages</li>
+<li>Business, professional, and personal blogs</li>
+<li>Resumes and CVs</li>
+</ul>
+<hr>
+<h2 id="how-to-install-hugo"><strong>How to Install Hugo</strong></h2>
+<h3 id="ubuntudebian"><strong>Ubuntu/Debian:</strong></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt install hugo
+</span></span></code></pre></div><h3 id="arch"><strong>Arch:</strong></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo pacman -S hugo
+</span></span></code></pre></div><h3 id="fedora"><strong>Fedora:</strong></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo dnf install hugo
+</span></span></code></pre></div><p><strong>To verify your installation, run:</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hugo version
+</span></span></code></pre></div><p><strong>You should see output similar to:</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hugo v0.123.7+extended linux/amd64 <span class="nv">BuildDate</span><span class="o">=</span>2024-07-16T05:50:19Z <span class="nv">VendorInfo</span><span class="o">=</span>ubuntu:0.123.7-1ubuntu0.1
+</span></span></code></pre></div><hr>
+<h2 id="hugo-commands-and-configuration"><strong>Hugo Commands and Configuration</strong></h2>
+<p>Before creating your site, familiarize yourself with these essential Hugo CLI commands:</p>
+<p><strong><code>hugo check</code> – Runs verification checks</strong></p>
+<p><strong><code>hugo new</code> – Creates new content</strong></p>
+<p><strong><code>hugo server</code> – Starts a local development server</strong></p>
+<p><strong><code>hugo version</code> – Displays the current Hugo version</strong></p>
+<p><strong>Use <code>hugo help</code> to see all available commands and flags.</strong></p>
+<h3 id="the-hugo-configuration-file"><strong>The Hugo Configuration File:</strong></h3>
+<p>Hugo’s configuration file can be in YAML, TOML, or JSON format. Here’s an example configuration in TOML:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="nx">baseURL</span> <span class="p">=</span> <span class="s2">&#34;https://example.com/&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">languageCode</span> <span class="p">=</span> <span class="s2">&#34;en-us&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">title</span> <span class="p">=</span> <span class="s2">&#34;My Hugo Site&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">theme</span> <span class="p">=</span> <span class="s2">&#34;LoveIt&#34;</span>
+</span></span></code></pre></div><h2 id="how-to-create-a-hugo-site"><strong>How To Create a Hugo Site</strong></h2>
+<p><strong>Create a new site with:</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hugo new site my-hugo-site
+</span></span></code></pre></div><ul>
+<li>Navigate to your site directory, where you’ll find folders like config.toml, archetypes, content, layouts, themes, data, and static.</li>
+</ul>
+<p><strong>Key Directories</strong></p>
+<ul>
+<li>config.toml: Contains global settings for your site.</li>
+<li>archetypes/: Holds content templates in Markdown, useful for different content types.</li>
+</ul>
+<p><strong>Example of a posts archetype:</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="err">+++</span>
+</span></span><span class="line"><span class="cl"><span class="nx">title</span> <span class="p">=</span> <span class="s1">&#39;&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">date</span> <span class="p">=</span> <span class="ld">2024-08-11T19:16:39+05:30</span>
+</span></span><span class="line"><span class="cl"><span class="nx">draft</span> <span class="p">=</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl"><span class="nx">description</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="err">+++</span>
+</span></span></code></pre></div><p><strong>Create a new post using:</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hugo new posts/first_post.md
+</span></span></code></pre></div><h2 id="how-to-add-a-theme-to-a-hugo-site"><strong>How To Add a Theme to a Hugo Site</strong></h2>
+<p>Use the LoveIt theme, or choose another from <a href="https://themes.gohugo.io/" target="_blank" rel="noopener noreffer ">Hugo Themes</a>:</p>
+<h3 id="option-1-clone-the-theme"><strong>Option 1: Clone the Theme</strong></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git clone https://github.com/dillonzq/LoveIt.git themes/LoveIt
+</span></span></code></pre></div><h3 id="option-2-use-as-a-submodule"><strong>Option 2: Use as a Submodule</strong></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git init
+</span></span><span class="line"><span class="cl">git submodule add https://github.com/dillonzq/LoveIt.git themes/LoveIt
+</span></span></code></pre></div><p><strong>Activate the theme in config.toml:</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="nx">theme</span> <span class="p">=</span> <span class="s2">&#34;LoveIt&#34;</span>
+</span></span></code></pre></div><h2 id="how-to-preview-a-hugo-site"><strong>How To Preview a Hugo Site</strong></h2>
+<p>Start the webserver:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hugo server -D
+</span></span></code></pre></div><p>Visit <code>http://localhost:1313/</code> in your browser to see your site with real-time updates.</p>
+<h2 id="how-to-deploy-a-hugo-site-to-github"><strong>How To Deploy a Hugo Site to GitHub</strong></h2>
+<p><strong>Update your config.toml:</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="nx">baseURL</span> <span class="p">=</span> <span class="s2">&#34;https://username.github.io/repo_name/&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">publishDir</span> <span class="p">=</span> <span class="s2">&#34;docs&#34;</span>
+</span></span></code></pre></div><p><strong>Deploy your site:</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git add docs/ themes/ hugo.toml
+</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;Initial commit&#34;</span>
+</span></span><span class="line"><span class="cl">git remote add origin https://github.com/username/repo_name.git
+</span></span><span class="line"><span class="cl">git branch -M main
+</span></span><span class="line"><span class="cl">git push -u origin main
+</span></span></code></pre></div><p><strong>Configure GitHub Pages settings:</strong></p>
+<ul>
+<li>Go to your GitHub repository.</li>
+<li>Navigate to Settings &gt; Pages.</li>
+<li>under Source <code>Deploy from a branch</code></li>
+<li>Under &ldquo;Branch,&rdquo; select <code>main</code> branch and <code>/docs</code> folder.</li>
+<li>Click &ldquo;Save.&rdquo;</li>
+</ul>
+<hr>
+<p><strong>This guide covers setting up Hugo and deploying your site to GitHub. However, when creating your content, you will need to familiarize yourself with <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank" rel="noopener noreffer ">Markdown</a> and visit the <a href="https://gohugo.io/documentation/" target="_blank" rel="noopener noreffer ">Hugo documentation</a> for more details.</strong></p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 17-08-2024</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://ommibhatt.github.io/OmmiBlog/posts/website-with-hugo/" data-title="How To Build a Static Website With Hugo" data-via="OmmiBhatt"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://ommibhatt.github.io/OmmiBlog/posts/website-with-hugo/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://ommibhatt.github.io/OmmiBlog/posts/website-with-hugo/"><i class="fab fa-linkedin fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/OmmiBlog/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/OmmiBlog/posts/how-to-safely-uninstall-linux/" class="prev" rel="prev" title="How to Safely Uninstall Any Linux Distro from a Windows Dual Boot"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>How to Safely Uninstall Any Linux Distro from a Windows Dual Boot</a>
+            <a href="/OmmiBlog/posts/arduino-ide/" class="next" rel="next" title="How to Install Arduino IDE on Linux Without Port Issues">How to Install Arduino IDE on Linux Without Port Issues<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="giscus" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://giscus.app">Giscus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.110.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://www.linkedin.com/in/om-bhatt-b92a4422a" target="_blank">Om Bhatt</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/OmmiBlog/lib/lightgallery/css/lightgallery-bundle.min.css"><script type="text/javascript" src="/OmmiBlog/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/OmmiBlog/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/OmmiBlog/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js"></script><script type="text/javascript" src="/OmmiBlog/lib/lightgallery/plugins/zoom/lg-zoom.min.js"></script><script type="text/javascript" src="/OmmiBlog/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/OmmiBlog/lib/sharer/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{"giscus":{"category":"Announcements","categoryId":"DIC_kwDONGPATs4CjtwX","darkTheme":"dark","emitMetadata":"0","inputPosition":"bottom","lang":"en","lazyLoading":false,"lightTheme":"light","mapping":"pathname","reactionsEnabled":"1","repo":"ommibhatt/OmmiBlog","repoId":"R_kgDONGPATg"}},"lightgallery":true};</script><script type="text/javascript" src="/OmmiBlog/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'G-7QKJQTSC2R', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-7QKJQTSC2R" async></script></body>
+</html>

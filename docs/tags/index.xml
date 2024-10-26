@@ -1,0 +1,8 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Tags - Tag - OmmiBlog</title>
+        <link>https://ommibhatt.github.io/OmmiBlog/tags/</link>
+        <description>Tags - Tag - OmmiBlog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>ommibhatt@gmail.com (Om Bhatt)</managingEditor>
+            <webMaster>ommibhatt@gmail.com (Om Bhatt)</webMaster><atom:link href="https://ommibhatt.github.io/OmmiBlog/tags/" rel="self" type="application/rss+xml" /></channel>
+</rss>
